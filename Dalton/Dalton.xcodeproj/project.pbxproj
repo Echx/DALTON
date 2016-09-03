@@ -148,11 +148,11 @@
 				625B0D0C1D7AC83D001ED4B7 /* AppDelegate.swift */,
 				625B0D0E1D7AC83D001ED4B7 /* ViewController.swift */,
 				0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */,
+				0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */,
 				625B0D101D7AC83D001ED4B7 /* Main.storyboard */,
 				625B0D131D7AC83D001ED4B7 /* Assets.xcassets */,
 				625B0D151D7AC83D001ED4B7 /* LaunchScreen.storyboard */,
 				625B0D181D7AC83D001ED4B7 /* Info.plist */,
-				0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */,
 			);
 			path = Dalton;
 			sourceTree = "<group>";
