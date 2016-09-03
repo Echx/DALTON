@@ -30,8 +30,8 @@ class DaltonExtensionViewController: UIViewController, PHContentEditingControlle
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func viewRed(sender: AnyObject) {
-        currentMode = sender.tag
+    @IBAction func switchMode(sender: UISegmentedControl) {
+        currentMode = sender.selectedSegmentIndex > ColorBlindness.CBMode.Blind.rawValue ? sender.selectedSegmentIndex + ColorBlindness.CBMode.RedDaltonize.rawValue - ColorBlindness.CBMode.Blind.rawValue - 1 : sender.selectedSegmentIndex
         if displayedImage != nil {
             imageView.image = performFilter(displayedImage!)
         }

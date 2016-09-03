@@ -10,15 +10,14 @@ import UIKit
 
 public class ColorBlindness {
     public enum CBMode: Int {
-        case None = 0, Red, Green, Blue, Blind, Shift
+        case None = 0, Red, Green, Blind, Shift
         case RedDaltonize = 999, GreenDaltonize
     }
     
     public static let colorMatrices: [Int: Matrix] = [
-        CBMode.None.rawValue: Matrix(matrix: [[1, 0, 0], [0, 1, 0], [0, 0, 1]]),
+        CBMode.None.rawValue: Matrix.identityMatrix(3),
         CBMode.Red.rawValue: Matrix(matrix: [[0, 2.02344, -2.52581], [0, 1, 0], [0, 0, 1]]),
         CBMode.Green.rawValue: Matrix(matrix: [[1, 0, 0], [0.494207, 0, 1.24827], [0, 0, 1]]),
-        CBMode.Blue.rawValue: Matrix(matrix: [[1, 0, 0], [0, 1, 0], [-0.395913, 0.801109, 1]]),
         CBMode.Blind.rawValue: Matrix(matrix: [[0, 0, 0], [0, 0, 0], [0, 0, 0]]),
         CBMode.Shift.rawValue: Matrix(matrix: [[0, 0, 0], [0.7, 1, 0], [0.7, 0, 1]])
     ]
