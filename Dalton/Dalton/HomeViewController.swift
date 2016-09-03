@@ -42,10 +42,15 @@ class HomeViewController: ViewController {
 			}
 			
 		} else {
-			mode = ColorBlindness.CBMode.RedDaltonize.rawValue
+			switch colorModeSegment.selectedSegmentIndex {
+			case 1:
+				mode = ColorBlindness.CBMode.RedDaltonize.rawValue
+			case 2:
+				mode = ColorBlindness.CBMode.GreenDaltonize.rawValue
+			default:
+				mode = ColorBlindness.CBMode.None.rawValue
+			}
 		}
-		
-		print(mode)
 		
 		NSUserDefaults.standardUserDefaults().setInteger(mode, forKey: "MODE")
     }
