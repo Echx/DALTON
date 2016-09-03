@@ -14,10 +14,14 @@ import GLKit
 
 class RealTimeVideoFilterViewController: UIViewController {
 
-	var videoPreviewView: GLKView!
+	@IBOutlet var videoPreviewViewLeft: GLKView!
+	@IBOutlet var videoPreviewViewRight: GLKView!
+	
+	
 	var ciContext: CIContext!
 	var eaglContext: EAGLContext!
-	var videoPreviewViewBounds: CGRect!
+	var videoPreviewViewBoundsLeft: CGRect!
+	var videoPreviewViewBoundsRight: CGRect!
 	
 	var videoDevice: AVCaptureDevice!
 	var captureSession: AVCaptureSession!
@@ -29,22 +33,28 @@ class RealTimeVideoFilterViewController: UIViewController {
         super.viewDidLoad()
 		
 		self.view.backgroundColor = UIColor.clearColor()
-		
-		let window = (UIApplication.sharedApplication().delegate as! AppDelegate).window!
 		self.eaglContext = EAGLContext(API: EAGLRenderingAPI.OpenGLES2)
-		self.videoPreviewView = GLKView(frame: window.bounds, context: self.eaglContext)
-		self.videoPreviewView?.enableSetNeedsDisplay = false
 		
-		self.videoPreviewView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-		self.videoPreviewView.frame = window.bounds
 		
-		window.addSubview(self.videoPreviewView)
-		window.sendSubviewToBack(self.videoPreviewView)
+		self.videoPreviewViewLeft.context = self.eaglContext
+		self.videoPreviewViewLeft?.enableSetNeedsDisplay = false
 		
-		self.videoPreviewView.bindDrawable()
-		self.videoPreviewViewBounds = CGRectZero
-		self.videoPreviewViewBounds.size.width = CGFloat(self.videoPreviewView.drawableWidth)
-		self.videoPreviewViewBounds.size.height = CGFloat(self.videoPreviewView.drawableHeight)
+		self.videoPreviewViewLeft.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+		self.videoPreviewViewLeft.bindDrawable()
+		self.videoPreviewViewBoundsLeft = CGRectMake(0, 0, CGFloat(self.videoPreviewViewLeft.drawableWidth), CGFloat(self.videoPreviewViewLeft.drawableHeight))
+		
+		self.videoPreviewViewRight.context = self.eaglContext
+		self.videoPreviewViewRight?.enableSetNeedsDisplay = false
+		
+		self.videoPreviewViewRight.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+		self.videoPreviewViewRight.bindDrawable()
+		
+		self.videoPreviewViewBoundsRight = CGRectMake(0, 0, CGFloat(self.videoPreviewViewRight.drawableWidth), CGFloat(self.videoPreviewViewRight.drawableHeight))
+		
+		
+		
+		
+		
 		
 		self.ciContext = CIContext(EAGLContext: self.eaglContext, options: [kCIContextWorkingColorSpace: NSNull()])
 		
@@ -154,19 +164,7 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		let filteredImage = filter.outputImage
 		
 		let sourceAspect = sourceExtent.size.width / sourceExtent.size.height
-		let previewAspect = videoPreviewViewBounds.size.width  / videoPreviewViewBounds.size.height
 		
-		var drawRect = sourceExtent
-		if (sourceAspect > previewAspect) {
-			drawRect.origin.x += (drawRect.size.width - drawRect.size.height * previewAspect) / 2.0;
-			drawRect.size.width = drawRect.size.height * previewAspect
-		}
-		
-		self.videoPreviewView.bindDrawable()
-		
-		if (eaglContext != EAGLContext.currentContext()) {
-			EAGLContext.setCurrentContext(eaglContext)
-		}
 		
 		glClearColor(0.5, 0.5, 0.5, 1.0);
 		glClear(GLenum(GL_COLOR_BUFFER_BIT));
@@ -174,11 +172,54 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		// set the blend mode to "source over" so that CI will use that
 		glEnable(GLenum(GL_BLEND));
 		glBlendFunc(GLenum(GL_ONE), GLenum(GL_ONE_MINUS_SRC_ALPHA));
-
-		if filteredImage != nil {
-			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBounds, fromRect: drawRect)
+		
+		
+		//left
+		
+		let previewAspectLeft = videoPreviewViewBoundsLeft.size.width  / videoPreviewViewBoundsLeft.size.height
+		var drawRectLeft = sourceExtent
+		if (sourceAspect > previewAspectLeft) {
+			drawRectLeft.origin.x += (drawRectLeft.size.width - drawRectLeft.size.height * previewAspectLeft) / 2.0 - 100;
+			drawRectLeft.size.width = drawRectLeft.size.height * previewAspectLeft
 		}
 		
-		self.videoPreviewView.display()
+		self.videoPreviewViewLeft.bindDrawable()
+		
+		if (eaglContext != EAGLContext.currentContext()) {
+			EAGLContext.setCurrentContext(eaglContext)
+		}
+
+		if filteredImage != nil {
+			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
+			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
+		}
+		
+		self.videoPreviewViewLeft.display()
+		
+		
+		//right
+		
+		let previewAspectRight = videoPreviewViewBoundsRight.size.width  / videoPreviewViewBoundsRight.size.height
+		
+		var drawRectRight = sourceExtent
+		
+		if (sourceAspect > previewAspectRight) {
+			drawRectRight.origin.x += (drawRectRight.size.width - drawRectRight.size.height * previewAspectRight) / 2.0 + 100;
+			drawRectRight.size.width = drawRectRight.size.height * previewAspectRight
+		}
+
+		
+		self.videoPreviewViewRight.bindDrawable()
+		
+		if (eaglContext != EAGLContext.currentContext()) {
+			EAGLContext.setCurrentContext(eaglContext)
+		}
+		
+		if filteredImage != nil {
+			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
+			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
+		}
+		
+		self.videoPreviewViewRight.display()
 	}
 }

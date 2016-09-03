@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F60-mH-HBC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="op1-c0-nv0">
-            <objects>
-                <navigationController id="F60-mH-HBC" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IzO-nd-xUw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="00B-R3-d2g"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cm9-Xh-Xzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-250" y="-1967"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -30,14 +14,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paD-2H-w75">
-                                <rect key="frame" x="226" y="285" width="149" height="30"/>
+                                <rect key="frame" x="293" y="192" width="149" height="30"/>
                                 <state key="normal" title="Real Time Video Filter"/>
                                 <connections>
-                                    <segue destination="qwy-DB-WWJ" kind="show" id="ZDw-Kd-xIT"/>
+                                    <segue destination="qwy-DB-WWJ" kind="presentation" modalTransitionStyle="crossDissolve" id="ZDw-Kd-xIT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,6 +32,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I76-zD-s7M"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,14 +48,39 @@
                         <viewControllerLayoutGuide type="bottom" id="iiO-QE-s2Q"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Pxd-la-PQg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4gi-Q6-lAb">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8r-1L-Bjf" customClass="GLKView">
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="414"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xu2-3q-up4" customClass="GLKView">
+                                        <rect key="frame" x="368" y="0.0" width="368" height="414"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4gi-Q6-lAb" secondAttribute="trailing" id="c9n-MJ-d3q"/>
+                            <constraint firstItem="4gi-Q6-lAb" firstAttribute="leading" secondItem="Pxd-la-PQg" secondAttribute="leading" id="drP-An-LEz"/>
+                            <constraint firstItem="4gi-Q6-lAb" firstAttribute="top" secondItem="Pxd-la-PQg" secondAttribute="top" id="gqC-P5-1FC"/>
+                            <constraint firstItem="iiO-QE-s2Q" firstAttribute="top" secondItem="4gi-Q6-lAb" secondAttribute="bottom" id="z5F-Qa-yG6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="videoPreviewViewLeft" destination="c8r-1L-Bjf" id="WvO-Cv-CQm"/>
+                        <outlet property="videoPreviewViewRight" destination="xu2-3q-up4" id="jaa-MT-fH5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tas-2E-8Dt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="-816"/>
+            <point key="canvasLocation" x="284" y="-816"/>
         </scene>
     </scenes>
 </document>
