@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-pattern" translatesAutoresizingMaskIntoConstraints="NO" id="jtU-qw-voi">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="55O-34-eJk">
                                 <rect key="frame" x="144" y="104" width="449" height="206"/>
                                 <subviews>
@@ -27,6 +31,7 @@
                                             <segment title="Red Color Blindness"/>
                                             <segment title="Green Color Blindness"/>
                                         </segments>
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ugH-VT-WJr">
                                         <rect key="frame" x="0.0" y="58" width="449" height="29"/>
@@ -34,6 +39,7 @@
                                             <segment title="Simulation"/>
                                             <segment title="Correction"/>
                                         </segments>
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Myj-gi-YcD">
                                         <rect key="frame" x="0.0" y="116" width="449" height="30"/>
@@ -53,20 +59,28 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHx-Ki-A3P">
                                         <rect key="frame" x="0.0" y="176" width="449" height="30"/>
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Color Inspector"/>
                                         <connections>
                                             <segue destination="9a9-jQ-ofT" kind="presentation" modalTransitionStyle="crossDissolve" id="HMI-xP-cML"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jtU-qw-voi" secondAttribute="bottom" id="2W3-eT-ORz"/>
+                            <constraint firstAttribute="trailing" secondItem="jtU-qw-voi" secondAttribute="trailing" id="EM4-xp-RBO"/>
                             <constraint firstItem="55O-34-eJk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Knv-rA-wie"/>
+                            <constraint firstItem="jtU-qw-voi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PLI-df-dDY"/>
+                            <constraint firstItem="jtU-qw-voi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZbD-8h-Ser"/>
                             <constraint firstItem="55O-34-eJk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yNX-uS-waB"/>
                         </constraints>
                     </view>
@@ -288,4 +302,7 @@
             <point key="canvasLocation" x="-622" y="-99"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg-pattern" width="104" height="41"/>
+    </resources>
 </document>
