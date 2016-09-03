@@ -55,6 +55,9 @@
                                     <button opaque="NO" tag="999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oU-vb-ep6">
                                         <rect key="frame" x="256" y="0.0" width="64" height="30"/>
                                         <state key="normal" title="Daltonize"/>
+                                        <connections>
+                                            <action selector="viewRed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="cdK-8H-70E"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

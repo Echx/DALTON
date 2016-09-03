@@ -49,15 +49,11 @@ public class ColorBlindness {
             return simulatedCBMatrix
         } else {
             let substractedMatrix = Matrix.identityMatrix(3) - simulatedCBMatrix
-            matrices.insert(substractedMatrix!, atIndex: 0)
-            
             let shiftMatrix = colorMatrices[CBMode.Shift.rawValue]!
-            let shiftedMatrix = matrices.reduce(shiftMatrix, combine: {($0 * $1)!})
+            let shiftedMatrix = shiftMatrix * substractedMatrix!
+            let summedMatrix = Matrix.identityMatrix(3) + shiftedMatrix!
             
-            matrices.insert(shiftMatrix, atIndex: 0)
-            
-            let summationMatrix = Matrix.identityMatrix(3) + shiftedMatrix
-            return matrices.reduce(summationMatrix!, combine: {($0 * $1)!})
+            return summedMatrix!
         }
     }
     
