@@ -19,11 +19,12 @@
 		620A17561D7B3D1800FC4511 /* DaltonFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 620A174E1D7B3D1800FC4511 /* DaltonFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		620A175D1D7B3E0B00FC4511 /* ColorBlindness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A175B1D7B3E0B00FC4511 /* ColorBlindness.swift */; };
 		620A175E1D7B3E0B00FC4511 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A175C1D7B3E0B00FC4511 /* Matrix.swift */; };
+		620A179F1D7B464C00FC4511 /* DaltonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A179D1D7B464C00FC4511 /* DaltonExtension.swift */; };
+		620A17A01D7B464C00FC4511 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 620A179E1D7B464C00FC4511 /* Info.plist */; };
+		620A17A31D7B465100FC4511 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620A17A11D7B465100FC4511 /* MainInterface.storyboard */; };
 		6254E8681D7AD65B00587B36 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6254E8351D7ACCD500587B36 /* PhotosUI.framework */; };
 		6254E8691D7AD65B00587B36 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6254E8371D7ACCD500587B36 /* Photos.framework */; };
-		6254E86C1D7AD65B00587B36 /* PhotoEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254E86B1D7AD65B00587B36 /* PhotoEditingViewController.swift */; };
-		6254E86F1D7AD65B00587B36 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6254E86D1D7AD65B00587B36 /* MainInterface.storyboard */; };
-		6254E8731D7AD65B00587B36 /* DaltonColorCorrectExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6254E8671D7AD65B00587B36 /* DaltonColorCorrectExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6254E8731D7AD65B00587B36 /* DaltonExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6254E8671D7AD65B00587B36 /* DaltonExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		625B0D0D1D7AC83D001ED4B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B0D0C1D7AC83D001ED4B7 /* AppDelegate.swift */; };
 		625B0D0F1D7AC83D001ED4B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B0D0E1D7AC83D001ED4B7 /* ViewController.swift */; };
 		625B0D121D7AC83D001ED4B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D101D7AC83D001ED4B7 /* Main.storyboard */; };
@@ -45,7 +46,7 @@
 			containerPortal = 625B0D011D7AC83D001ED4B7 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6254E8661D7AD65B00587B36;
-			remoteInfo = DaltonColorCorrectExtension;
+			remoteInfo = DaltonExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -67,7 +68,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				6254E8731D7AD65B00587B36 /* DaltonColorCorrectExtension.appex in Embed App Extensions */,
+				6254E8731D7AD65B00587B36 /* DaltonExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,12 +89,12 @@
 		620A17521D7B3D1800FC4511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		620A175B1D7B3E0B00FC4511 /* ColorBlindness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBlindness.swift; sourceTree = "<group>"; };
 		620A175C1D7B3E0B00FC4511 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		620A179D1D7B464C00FC4511 /* DaltonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaltonExtension.swift; sourceTree = "<group>"; };
+		620A179E1D7B464C00FC4511 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		620A17A21D7B465100FC4511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		6254E8351D7ACCD500587B36 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		6254E8371D7ACCD500587B36 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		6254E8671D7AD65B00587B36 /* DaltonColorCorrectExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaltonColorCorrectExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		6254E86B1D7AD65B00587B36 /* PhotoEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
-		6254E86E1D7AD65B00587B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		6254E8701D7AD65B00587B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6254E8671D7AD65B00587B36 /* DaltonExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaltonExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		625B0D091D7AC83D001ED4B7 /* Dalton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dalton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		625B0D0C1D7AC83D001ED4B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		625B0D0E1D7AC83D001ED4B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,21 +158,21 @@
 			path = DaltonFramework;
 			sourceTree = "<group>";
 		};
-		6254E86A1D7AD65B00587B36 /* DaltonColorCorrectExtension */ = {
+		6254E86A1D7AD65B00587B36 /* DaltonExtension */ = {
 			isa = PBXGroup;
 			children = (
-				6254E86B1D7AD65B00587B36 /* PhotoEditingViewController.swift */,
-				6254E86D1D7AD65B00587B36 /* MainInterface.storyboard */,
-				6254E8701D7AD65B00587B36 /* Info.plist */,
+				620A17A11D7B465100FC4511 /* MainInterface.storyboard */,
+				620A179D1D7B464C00FC4511 /* DaltonExtension.swift */,
+				620A179E1D7B464C00FC4511 /* Info.plist */,
 			);
-			path = DaltonColorCorrectExtension;
+			path = DaltonExtension;
 			sourceTree = "<group>";
 		};
 		625B0D001D7AC83D001ED4B7 = {
 			isa = PBXGroup;
 			children = (
 				625B0D0B1D7AC83D001ED4B7 /* Dalton */,
-				6254E86A1D7AD65B00587B36 /* DaltonColorCorrectExtension */,
+				6254E86A1D7AD65B00587B36 /* DaltonExtension */,
 				620A174F1D7B3D1800FC4511 /* DaltonFramework */,
 				625B0D0A1D7AC83D001ED4B7 /* Products */,
 				55C92C130572D7BBBB4D24AA /* Pods */,
@@ -183,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				625B0D091D7AC83D001ED4B7 /* Dalton.app */,
-				6254E8671D7AD65B00587B36 /* DaltonColorCorrectExtension.appex */,
+				6254E8671D7AD65B00587B36 /* DaltonExtension.appex */,
 				620A174E1D7B3D1800FC4511 /* DaltonFramework.framework */,
 			);
 			name = Products;
@@ -251,9 +252,9 @@
 			productReference = 620A174E1D7B3D1800FC4511 /* DaltonFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6254E8661D7AD65B00587B36 /* DaltonColorCorrectExtension */ = {
+		6254E8661D7AD65B00587B36 /* DaltonExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6254E8741D7AD65B00587B36 /* Build configuration list for PBXNativeTarget "DaltonColorCorrectExtension" */;
+			buildConfigurationList = 6254E8741D7AD65B00587B36 /* Build configuration list for PBXNativeTarget "DaltonExtension" */;
 			buildPhases = (
 				6254E8631D7AD65B00587B36 /* Sources */,
 				6254E8641D7AD65B00587B36 /* Frameworks */,
@@ -263,9 +264,9 @@
 			);
 			dependencies = (
 			);
-			name = DaltonColorCorrectExtension;
-			productName = DaltonColorCorrectExtension;
-			productReference = 6254E8671D7AD65B00587B36 /* DaltonColorCorrectExtension.appex */;
+			name = DaltonExtension;
+			productName = DaltonExtension;
+			productReference = 6254E8671D7AD65B00587B36 /* DaltonExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		625B0D081D7AC83D001ED4B7 /* Dalton */ = {
@@ -327,7 +328,7 @@
 			projectRoot = "";
 			targets = (
 				625B0D081D7AC83D001ED4B7 /* Dalton */,
-				6254E8661D7AD65B00587B36 /* DaltonColorCorrectExtension */,
+				6254E8661D7AD65B00587B36 /* DaltonExtension */,
 				620A174D1D7B3D1800FC4511 /* DaltonFramework */,
 			);
 		};
@@ -345,7 +346,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6254E86F1D7AD65B00587B36 /* MainInterface.storyboard in Resources */,
+				620A17A01D7B464C00FC4511 /* Info.plist in Resources */,
+				620A17A31D7B465100FC4511 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6254E86C1D7AD65B00587B36 /* PhotoEditingViewController.swift in Sources */,
+				620A179F1D7B464C00FC4511 /* DaltonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,16 +452,16 @@
 		};
 		6254E8721D7AD65B00587B36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6254E8661D7AD65B00587B36 /* DaltonColorCorrectExtension */;
+			target = 6254E8661D7AD65B00587B36 /* DaltonExtension */;
 			targetProxy = 6254E8711D7AD65B00587B36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6254E86D1D7AD65B00587B36 /* MainInterface.storyboard */ = {
+		620A17A11D7B465100FC4511 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6254E86E1D7AD65B00587B36 /* Base */,
+				620A17A21D7B465100FC4511 /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -530,11 +532,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
-				INFOPLIST_FILE = DaltonColorCorrectExtension/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = DaltonExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.echx.Dalton.DaltonColorCorrectExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.Dalton.DaltonExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -542,9 +546,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
-				INFOPLIST_FILE = DaltonColorCorrectExtension/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = DaltonExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.echx.Dalton.DaltonColorCorrectExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.Dalton.DaltonExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -669,8 +674,9 @@
 				620A17591D7B3D1800FC4511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		6254E8741D7AD65B00587B36 /* Build configuration list for PBXNativeTarget "DaltonColorCorrectExtension" */ = {
+		6254E8741D7AD65B00587B36 /* Build configuration list for PBXNativeTarget "DaltonExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6254E8751D7AD65B00587B36 /* Debug */,

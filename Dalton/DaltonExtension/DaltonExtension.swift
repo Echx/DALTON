@@ -1,6 +1,6 @@
 //
-//  PhotoEditingViewController.swift
-//  DaltonColorCorrectExtension
+//  DaltonExtension.swift
+//  DaltonExtensionViewController
 //
 //  Created by Lei Mingyu on 3/9/16.
 //  Copyright © 2016 Echx. All rights reserved.
@@ -11,7 +11,7 @@ import Photos
 import PhotosUI
 import DaltonFramework
 
-class PhotoEditingViewController: UIViewController, PHContentEditingController {
+class DaltonExtensionViewController: UIViewController, PHContentEditingController {
     
     @IBOutlet weak var imageView: UIImageView!
     
