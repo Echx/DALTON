@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		625B0D0D1D7AC83D001ED4B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B0D0C1D7AC83D001ED4B7 /* AppDelegate.swift */; };
+		625B0D0F1D7AC83D001ED4B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B0D0E1D7AC83D001ED4B7 /* ViewController.swift */; };
+		625B0D121D7AC83D001ED4B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D101D7AC83D001ED4B7 /* Main.storyboard */; };
+		625B0D141D7AC83D001ED4B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D131D7AC83D001ED4B7 /* Assets.xcassets */; };
+		625B0D171D7AC83D001ED4B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D151D7AC83D001ED4B7 /* LaunchScreen.storyboard */; };
+		C8C126FEC2879AFB06F8587A /* Pods_Dalton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412273843AD94B3631CE0AE0 /* Pods_Dalton.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		412273843AD94B3631CE0AE0 /* Pods_Dalton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dalton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		625B0D091D7AC83D001ED4B7 /* Dalton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dalton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		625B0D0C1D7AC83D001ED4B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		625B0D0E1D7AC83D001ED4B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		625B0D111D7AC83D001ED4B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		625B0D131D7AC83D001ED4B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		625B0D161D7AC83D001ED4B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		625B0D181D7AC83D001ED4B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74C232C07D2445783C68DCE4 /* Pods-Dalton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dalton/Pods-Dalton.debug.xcconfig"; sourceTree = "<group>"; };
+		B2E7CAF727E5A5555074AA54 /* Pods-Dalton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalton.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dalton/Pods-Dalton.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		625B0D061D7AC83D001ED4B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8C126FEC2879AFB06F8587A /* Pods_Dalton.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55C92C130572D7BBBB4D24AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74C232C07D2445783C68DCE4 /* Pods-Dalton.debug.xcconfig */,
+				B2E7CAF727E5A5555074AA54 /* Pods-Dalton.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		625B0D001D7AC83D001ED4B7 = {
+			isa = PBXGroup;
+			children = (
+				625B0D0B1D7AC83D001ED4B7 /* Dalton */,
+				625B0D0A1D7AC83D001ED4B7 /* Products */,
+				55C92C130572D7BBBB4D24AA /* Pods */,
+				68386B5EE1033F1E03F12169 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		625B0D0A1D7AC83D001ED4B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				625B0D091D7AC83D001ED4B7 /* Dalton.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		625B0D0B1D7AC83D001ED4B7 /* Dalton */ = {
+			isa = PBXGroup;
+			children = (
+				625B0D0C1D7AC83D001ED4B7 /* AppDelegate.swift */,
+				625B0D0E1D7AC83D001ED4B7 /* ViewController.swift */,
+				625B0D101D7AC83D001ED4B7 /* Main.storyboard */,
+				625B0D131D7AC83D001ED4B7 /* Assets.xcassets */,
+				625B0D151D7AC83D001ED4B7 /* LaunchScreen.storyboard */,
+				625B0D181D7AC83D001ED4B7 /* Info.plist */,
+			);
+			path = Dalton;
+			sourceTree = "<group>";
+		};
+		68386B5EE1033F1E03F12169 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				412273843AD94B3631CE0AE0 /* Pods_Dalton.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		625B0D081D7AC83D001ED4B7 /* Dalton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 625B0D1B1D7AC83D001ED4B7 /* Build configuration list for PBXNativeTarget "Dalton" */;
+			buildPhases = (
+				EB3E42A377C569D1AA797989 /* [CP] Check Pods Manifest.lock */,
+				625B0D051D7AC83D001ED4B7 /* Sources */,
+				625B0D061D7AC83D001ED4B7 /* Frameworks */,
+				625B0D071D7AC83D001ED4B7 /* Resources */,
+				40313F540D5F726949BCB1D4 /* [CP] Embed Pods Frameworks */,
+				2B9BC91AB73B4FCA15939F67 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dalton;
+			productName = Dalton;
+			productReference = 625B0D091D7AC83D001ED4B7 /* Dalton.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		625B0D011D7AC83D001ED4B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Echx;
+				TargetAttributes = {
+					625B0D081D7AC83D001ED4B7 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 625B0D041D7AC83D001ED4B7 /* Build configuration list for PBXProject "Dalton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 625B0D001D7AC83D001ED4B7;
+			productRefGroup = 625B0D0A1D7AC83D001ED4B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				625B0D081D7AC83D001ED4B7 /* Dalton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		625B0D071D7AC83D001ED4B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				625B0D171D7AC83D001ED4B7 /* LaunchScreen.storyboard in Resources */,
+				625B0D141D7AC83D001ED4B7 /* Assets.xcassets in Resources */,
+				625B0D121D7AC83D001ED4B7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B9BC91AB73B4FCA15939F67 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dalton/Pods-Dalton-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40313F540D5F726949BCB1D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dalton/Pods-Dalton-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB3E42A377C569D1AA797989 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		625B0D051D7AC83D001ED4B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				625B0D0F1D7AC83D001ED4B7 /* ViewController.swift in Sources */,
+				625B0D0D1D7AC83D001ED4B7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		625B0D101D7AC83D001ED4B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				625B0D111D7AC83D001ED4B7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		625B0D151D7AC83D001ED4B7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				625B0D161D7AC83D001ED4B7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		625B0D191D7AC83D001ED4B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		625B0D1A1D7AC83D001ED4B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		625B0D1C1D7AC83D001ED4B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74C232C07D2445783C68DCE4 /* Pods-Dalton.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Dalton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.Dalton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		625B0D1D1D7AC83D001ED4B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2E7CAF727E5A5555074AA54 /* Pods-Dalton.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Dalton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.Dalton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		625B0D041D7AC83D001ED4B7 /* Build configuration list for PBXProject "Dalton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				625B0D191D7AC83D001ED4B7 /* Debug */,
+				625B0D1A1D7AC83D001ED4B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		625B0D1B1D7AC83D001ED4B7 /* Build configuration list for PBXNativeTarget "Dalton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				625B0D1C1D7AC83D001ED4B7 /* Debug */,
+				625B0D1D1D7AC83D001ED4B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 625B0D011D7AC83D001ED4B7 /* Project object */;
+}
