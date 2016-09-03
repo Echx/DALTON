@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+	
+	@IBAction func dismissViewController() {
+		if self.presentedViewController != nil {
+			
+		}
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()

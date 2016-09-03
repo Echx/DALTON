@@ -18,16 +18,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paD-2H-w75">
-                                <rect key="frame" x="293" y="192" width="149" height="30"/>
-                                <state key="normal" title="Real Time Video Filter"/>
+                                <rect key="frame" x="304" y="192" width="129" height="30"/>
+                                <state key="normal" title="Real Time AR Filter"/>
                                 <connections>
                                     <segue destination="qwy-DB-WWJ" kind="presentation" modalTransitionStyle="crossDissolve" id="ZDw-Kd-xIT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JV-DD-KUz">
+                                <rect key="frame" x="294" y="230" width="149" height="30"/>
+                                <state key="normal" title="Real Time Video Filter"/>
+                                <connections>
+                                    <segue destination="M9V-yc-IEe" kind="presentation" id="oTf-GP-eVI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3JV-DD-KUz" firstAttribute="top" secondItem="paD-2H-w75" secondAttribute="bottom" constant="8" id="6S7-GY-aZT"/>
                             <constraint firstItem="paD-2H-w75" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oto-Sz-r73"/>
+                            <constraint firstItem="3JV-DD-KUz" firstAttribute="centerX" secondItem="paD-2H-w75" secondAttribute="centerX" id="U46-mu-6j9"/>
                             <constraint firstItem="paD-2H-w75" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wrx-Mx-OhE"/>
                         </constraints>
                     </view>
@@ -39,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="-599" y="-816"/>
         </scene>
-        <!--Real Time Video Filter View Controller-->
+        <!--Real TimeAR View Controller-->
         <scene sceneID="nPF-rZ-0et">
             <objects>
-                <viewController id="qwy-DB-WWJ" customClass="RealTimeVideoFilterViewController" customModule="Dalton" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qwy-DB-WWJ" customClass="RealTimeARViewController" customModule="Dalton" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Npu-gR-JTE"/>
                         <viewControllerLayoutGuide type="bottom" id="iiO-QE-s2Q"/>
@@ -56,20 +65,28 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8r-1L-Bjf" customClass="GLKView">
                                         <rect key="frame" x="0.0" y="0.0" width="368" height="414"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xu2-3q-up4" customClass="GLKView">
                                         <rect key="frame" x="368" y="0.0" width="368" height="414"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwB-Vn-k0H">
+                                <rect key="frame" x="353" y="364" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="✕"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="OwB-Vn-k0H" firstAttribute="centerX" secondItem="Pxd-la-PQg" secondAttribute="centerX" id="YeO-kD-oRX"/>
                             <constraint firstAttribute="trailing" secondItem="4gi-Q6-lAb" secondAttribute="trailing" id="c9n-MJ-d3q"/>
                             <constraint firstItem="4gi-Q6-lAb" firstAttribute="leading" secondItem="Pxd-la-PQg" secondAttribute="leading" id="drP-An-LEz"/>
                             <constraint firstItem="4gi-Q6-lAb" firstAttribute="top" secondItem="Pxd-la-PQg" secondAttribute="top" id="gqC-P5-1FC"/>
+                            <constraint firstItem="iiO-QE-s2Q" firstAttribute="top" secondItem="OwB-Vn-k0H" secondAttribute="bottom" constant="20" id="yN6-uf-kb1"/>
                             <constraint firstItem="iiO-QE-s2Q" firstAttribute="top" secondItem="4gi-Q6-lAb" secondAttribute="bottom" id="z5F-Qa-yG6"/>
                         </constraints>
                     </view>
@@ -81,6 +98,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tas-2E-8Dt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="284" y="-816"/>
+        </scene>
+        <!--Real Time Video Filter View Controller-->
+        <scene sceneID="T0u-dL-xw4">
+            <objects>
+                <viewController id="M9V-yc-IEe" customClass="RealTimeVideoFilterViewController" customModule="Dalton" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FAA-bu-toH"/>
+                        <viewControllerLayoutGuide type="bottom" id="MWO-LI-qLC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vx7-rh-SEL">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-8v-kSq" customClass="GLKView">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fpD-8v-kSq" secondAttribute="bottom" id="7SB-4r-Bb1"/>
+                            <constraint firstItem="fpD-8v-kSq" firstAttribute="leading" secondItem="Vx7-rh-SEL" secondAttribute="leading" id="Gso-I5-gUb"/>
+                            <constraint firstAttribute="trailing" secondItem="fpD-8v-kSq" secondAttribute="trailing" id="QmN-al-aK2"/>
+                            <constraint firstItem="fpD-8v-kSq" firstAttribute="top" secondItem="Vx7-rh-SEL" secondAttribute="top" id="kvx-bO-aPs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="videoPreviewView" destination="fpD-8v-kSq" id="YFM-pa-oBE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ox-af-Aet" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="-230"/>
         </scene>
     </scenes>
 </document>

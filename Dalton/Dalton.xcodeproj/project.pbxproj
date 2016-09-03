@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C8DA9541D7B04AF00632DBD /* RealTimeARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */; };
 		0CD76DF61D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */; };
 		0CD76DFA1D7AD2F5004E37B5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DF91D7AD2F5004E37B5 /* AVFoundation.framework */; };
 		0CD76DFC1D7AD2FB004E37B5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DFB1D7AD2FB004E37B5 /* CoreImage.framework */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeARViewController.swift; sourceTree = "<group>"; };
 		0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeVideoFilterViewController.swift; sourceTree = "<group>"; };
 		0CD76DF71D7AD2EE004E37B5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		0CD76DF91D7AD2F5004E37B5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -144,6 +146,7 @@
 				625B0D131D7AC83D001ED4B7 /* Assets.xcassets */,
 				625B0D151D7AC83D001ED4B7 /* LaunchScreen.storyboard */,
 				625B0D181D7AC83D001ED4B7 /* Info.plist */,
+				0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */,
 			);
 			path = Dalton;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				0CD76DF61D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift in Sources */,
 				625B0D0F1D7AC83D001ED4B7 /* ViewController.swift in Sources */,
 				625B0D0D1D7AC83D001ED4B7 /* AppDelegate.swift in Sources */,
+				0C8DA9541D7B04AF00632DBD /* RealTimeARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
