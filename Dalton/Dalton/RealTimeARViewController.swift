@@ -13,6 +13,9 @@ import GLKit
 
 class RealTimeARViewController: ViewController {
 
+	
+	var currentMode = 1
+	
 	@IBOutlet var videoPreviewViewLeft: GLKView!
 	@IBOutlet var videoPreviewViewRight: GLKView!
 	
@@ -135,13 +138,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		filter.setDefaults()
 		filter.setValue(sourceImage, forKey: "inputImage")
 		
-		switch currentFilter {
-		case "CIColorMatrix":
-			filter.setValue(CIVector(x: 0, y: 1, z: 0, w:0), forKey: "inputRVector")
-			
-		default:
-			break
-		}
+		ColorBlindness.applyCBMatrix(filter, mode: currentMode)
 		
 		let filteredImage = filter.outputImage
 		
