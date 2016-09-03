@@ -61,7 +61,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
         
         return resultImage
     }
-
+    
     // MARK: - PHContentEditingController
 
     func canHandleAdjustmentData(adjustmentData: PHAdjustmentData?) -> Bool {

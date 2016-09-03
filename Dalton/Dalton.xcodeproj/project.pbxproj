@@ -12,6 +12,8 @@
 		0CD76DFA1D7AD2F5004E37B5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DF91D7AD2F5004E37B5 /* AVFoundation.framework */; };
 		0CD76DFC1D7AD2FB004E37B5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DFB1D7AD2FB004E37B5 /* CoreImage.framework */; };
 		0CD76E011D7AD30A004E37B5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DF71D7AD2EE004E37B5 /* OpenGLES.framework */; };
+		62524CBE1D7B0DBC002AE95D /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62524CBD1D7B0DBC002AE95D /* Matrix.swift */; };
+		62524CC01D7B0DE8002AE95D /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62524CBF1D7B0DE8002AE95D /* Matrix.swift */; };
 		6254E8681D7AD65B00587B36 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6254E8351D7ACCD500587B36 /* PhotosUI.framework */; };
 		6254E8691D7AD65B00587B36 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6254E8371D7ACCD500587B36 /* Photos.framework */; };
 		6254E86C1D7AD65B00587B36 /* PhotoEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254E86B1D7AD65B00587B36 /* PhotoEditingViewController.swift */; };
@@ -56,6 +58,8 @@
 		0CD76DF91D7AD2F5004E37B5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0CD76DFB1D7AD2FB004E37B5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		412273843AD94B3631CE0AE0 /* Pods_Dalton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dalton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62524CBD1D7B0DBC002AE95D /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		62524CBF1D7B0DE8002AE95D /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		6254E8351D7ACCD500587B36 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		6254E8371D7ACCD500587B36 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		6254E8671D7AD65B00587B36 /* DaltonColorCorrectExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaltonColorCorrectExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +113,7 @@
 		6254E86A1D7AD65B00587B36 /* DaltonColorCorrectExtension */ = {
 			isa = PBXGroup;
 			children = (
+				62524CBF1D7B0DE8002AE95D /* Matrix.swift */,
 				6254E86B1D7AD65B00587B36 /* PhotoEditingViewController.swift */,
 				6254E86D1D7AD65B00587B36 /* MainInterface.storyboard */,
 				6254E8701D7AD65B00587B36 /* Info.plist */,
@@ -139,6 +144,7 @@
 		625B0D0B1D7AC83D001ED4B7 /* Dalton */ = {
 			isa = PBXGroup;
 			children = (
+				62524CBD1D7B0DBC002AE95D /* Matrix.swift */,
 				625B0D0C1D7AC83D001ED4B7 /* AppDelegate.swift */,
 				625B0D0E1D7AC83D001ED4B7 /* ViewController.swift */,
 				0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */,
@@ -317,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62524CC01D7B0DE8002AE95D /* Matrix.swift in Sources */,
 				6254E86C1D7AD65B00587B36 /* PhotoEditingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CD76DF61D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift in Sources */,
+				62524CBE1D7B0DBC002AE95D /* Matrix.swift in Sources */,
 				625B0D0F1D7AC83D001ED4B7 /* ViewController.swift in Sources */,
 				625B0D0D1D7AC83D001ED4B7 /* AppDelegate.swift in Sources */,
 				0C8DA9541D7B04AF00632DBD /* RealTimeARViewController.swift in Sources */,
