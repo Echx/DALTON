@@ -75,7 +75,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
                                         [-0.0102485, 0.0540194, -0.113615],
                                         [-0.000365294, -0.00412163, 0.693513]])
         
-        return matrices.reduce(RGBMatrix, combine: *)
+		return matrices.reduce(RGBMatrix, combine: {($0 * $1)!})
     }
 
     // MARK: - PHContentEditingController

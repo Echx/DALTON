@@ -16,6 +16,7 @@ class RealTimeARViewController: ViewController {
 	@IBOutlet var videoPreviewViewLeft: GLKView!
 	@IBOutlet var videoPreviewViewRight: GLKView!
 	
+	let pupilDistance: CGFloat = 200 // in points
 	
 	var ciContext: CIContext!
 	var eaglContext: EAGLContext!
@@ -160,7 +161,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		let previewAspectLeft = videoPreviewViewBoundsLeft.size.width  / videoPreviewViewBoundsLeft.size.height
 		var drawRectLeft = sourceExtent
 		if (sourceAspect > previewAspectLeft) {
-			drawRectLeft.origin.x += (drawRectLeft.size.width - drawRectLeft.size.height * previewAspectLeft) / 2.0 - 100;
+			drawRectLeft.origin.x += (drawRectLeft.size.width - drawRectLeft.size.height * previewAspectLeft) / 2.0 - self.pupilDistance / 2;
 			drawRectLeft.size.width = drawRectLeft.size.height * previewAspectLeft
 		}
 		
@@ -183,7 +184,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		var drawRectRight = sourceExtent
 		
 		if (sourceAspect > previewAspectRight) {
-			drawRectRight.origin.x += (drawRectRight.size.width - drawRectRight.size.height * previewAspectRight) / 2.0 + 100;
+			drawRectRight.origin.x += (drawRectRight.size.width - drawRectRight.size.height * previewAspectRight) / 2.0 + self.pupilDistance / 2;
 			drawRectRight.size.width = drawRectRight.size.height * previewAspectRight
 		}
 		
