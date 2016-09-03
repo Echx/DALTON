@@ -51,6 +51,8 @@ class RealTimeColorReadingViewController: ViewController {
                 print("No device with AVMediaTypeVideo")
             }
             
+            self.view.sendSubviewToBack(self.videoPreviewView)
+            
             // Do any additional setup after loading the view.
         }
         
@@ -139,7 +141,11 @@ class RealTimeColorReadingViewController: ViewController {
             
             let image = UIImage(CGImage: cgOutput)
             let color = image.getPixelColor(point)
-            colorNameLabel.text = self.colorNamer.rgbToColorName(color).rawValue
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.colorNameLabel.text = self.colorNamer.rgbToColorName(color).rawValue
+            }
+            
             self.videoPreviewView.bindDrawable()
             
             if (eaglContext != EAGLContext.currentContext()) {
