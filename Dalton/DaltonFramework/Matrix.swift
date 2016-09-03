@@ -14,6 +14,15 @@ public class Matrix {
     public init(matrix: [[Double]]) {
         self.matrix = matrix
     }
+    
+    public class func identityMatrix(size: Int) -> Matrix {
+        var result:[[Double]] = [[Double]](count: size, repeatedValue:[Double](count: size, repeatedValue: 0))
+        for i in 0 ..< result.count {
+            result[i][i] = 1
+        }
+        
+        return Matrix(matrix: result)
+    }
 }
 
 public func * (lhs: Matrix, rhs: Matrix) -> Matrix? {
@@ -34,3 +43,40 @@ public func * (lhs: Matrix, rhs: Matrix) -> Matrix? {
     
     return Matrix(matrix: result)
 }
+
+public func + (lhs: Matrix, rhs: Matrix) -> Matrix? {
+    if (lhs.matrix.count != rhs.matrix.count || lhs.matrix[0].count != rhs.matrix[0].count) {
+        print("Illegal matrix dimensions!")
+        return nil
+    }
+    
+    var result:[[Double]] = [[Double]](count: lhs.matrix.count, repeatedValue:[Double](count: lhs.matrix[0].count, repeatedValue: 0))
+    
+    for i in 0 ..< result.count {
+        for j in 0 ..< result[0].count {
+            result[i][j] = lhs.matrix[i][j] + rhs.matrix[i][j]
+        }
+    }
+    
+    return Matrix(matrix: result)
+}
+
+public func - (lhs: Matrix, rhs: Matrix) -> Matrix? {
+    if (lhs.matrix.count != rhs.matrix.count || lhs.matrix[0].count != rhs.matrix[0].count) {
+        print("Illegal matrix dimensions!")
+        return nil
+    }
+    
+    var result:[[Double]] = [[Double]](count: lhs.matrix.count, repeatedValue:[Double](count: lhs.matrix[0].count, repeatedValue: 0))
+    
+    for i in 0 ..< result.count {
+        for j in 0 ..< result[0].count {
+            result[i][j] = lhs.matrix[i][j] - rhs.matrix[i][j]
+        }
+    }
+    
+    return Matrix(matrix: result)
+}
+
+
+
