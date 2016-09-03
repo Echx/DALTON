@@ -1,0 +1,6 @@
+framework module Pods_DaltonExtension {
+  umbrella header "Pods-DaltonExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}
