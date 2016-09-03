@@ -8,15 +8,15 @@
 
 import Foundation
 
-class Matrix {
-    var matrix: [[Double]]
+public class Matrix {
+    public var matrix: [[Double]]
     
-    init(matrix: [[Double]]) {
+    public init(matrix: [[Double]]) {
         self.matrix = matrix
     }
 }
 
-func * (lhs: Matrix, rhs: Matrix) -> Matrix? {
+public func * (lhs: Matrix, rhs: Matrix) -> Matrix? {
     if (lhs.matrix[0].count != rhs.matrix.count) {
         print("Illegal matrix dimensions!")
         return nil

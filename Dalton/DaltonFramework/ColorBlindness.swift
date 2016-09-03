@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ColorBlindness {
-    enum CBMode: Int {
+public class ColorBlindness {
+    public enum CBMode: Int {
         case None = 0, Red, Green, Blue, Blind
     }
     
-    static let colorMatrices: [Int: Matrix] = [
+    public static let colorMatrices: [Int: Matrix] = [
         CBMode.None.rawValue: Matrix(matrix: [[1, 0, 0], [0, 1, 0], [0, 0, 1]]),
         CBMode.Red.rawValue: Matrix(matrix: [[0, 2.02344, -2.52581], [0, 1, 0], [0, 0, 1]]),
         CBMode.Green.rawValue: Matrix(matrix: [[1, 0, 0], [0.494207, 0, 1.24827], [0, 0, 1]]),
@@ -21,7 +21,7 @@ class ColorBlindness {
         CBMode.Blind.rawValue: Matrix(matrix: [[0, 0, 0], [0, 0, 0], [0, 0, 0]])
     ]
     
-    class func getCBMatrix(colorMatrix: Matrix) -> Matrix {
+    public class func getCBMatrix(colorMatrix: Matrix) -> Matrix {
         var matrices = [Matrix]()
         let LMSMatrix = Matrix(matrix: [[17.8824, 43.5161, 4.11935],
             [3.45565, 27.1554, 3.86714],
@@ -36,7 +36,7 @@ class ColorBlindness {
         return matrices.reduce(RGBMatrix, combine: {($0 * $1)!})
     }
     
-    class func applyCBMatrix(filter: CIFilter, mode: Int) {
+    public class func applyCBMatrix(filter: CIFilter, mode: Int) {
         let colorMatrix = colorMatrices[mode]
         let CBMatrix = getCBMatrix(colorMatrix!)
         let rVector = CIVector(x: CGFloat(CBMatrix.matrix[0][0]),

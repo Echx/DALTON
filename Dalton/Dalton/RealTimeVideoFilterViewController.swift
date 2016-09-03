@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import CoreImage
 import GLKit
-
+import DaltonFramework
 
 class RealTimeVideoFilterViewController: ViewController {
 	
