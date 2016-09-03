@@ -10,10 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	@IBAction func dismissViewController() {
-		if self.presentedViewController != nil {
-			
-		}
+	@IBAction func dismiss() {
+		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 
     override func viewDidLoad() {

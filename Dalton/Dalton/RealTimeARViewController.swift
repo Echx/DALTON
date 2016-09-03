@@ -11,7 +11,7 @@ import AVFoundation
 import CoreImage
 import GLKit
 
-class RealTimeARViewController: UIViewController {
+class RealTimeARViewController: ViewController {
 
 	@IBOutlet var videoPreviewViewLeft: GLKView!
 	@IBOutlet var videoPreviewViewRight: GLKView!
@@ -175,7 +175,10 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
 		}
 		
-		self.videoPreviewViewLeft.display()
+		
+		dispatch_sync(dispatch_get_main_queue(), {
+			self.videoPreviewViewLeft.display()
+		})
 		
 		
 		//right
@@ -201,6 +204,8 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
 		}
 		
-		self.videoPreviewViewRight.display()
+		dispatch_sync(dispatch_get_main_queue(), {
+			self.videoPreviewViewRight.display()
+		})
 	}
 }
