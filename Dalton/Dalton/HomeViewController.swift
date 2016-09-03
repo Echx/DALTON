@@ -42,7 +42,7 @@ class HomeViewController: ViewController {
 			}
 			
 		} else {
-			mode = ColorBlindness.CBMode.Daltonize.rawValue
+			mode = ColorBlindness.CBMode.RedDaltonize.rawValue
 		}
 		
 		print(mode)

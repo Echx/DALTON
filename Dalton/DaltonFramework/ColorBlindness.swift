@@ -11,7 +11,7 @@ import UIKit
 public class ColorBlindness {
     public enum CBMode: Int {
         case None = 0, Red, Green, Blue, Blind, Shift
-        case Daltonize = 999
+        case RedDaltonize = 999, GreenDaltonize
     }
     
     public static let colorMatrices: [Int: Matrix] = [
@@ -31,8 +31,10 @@ public class ColorBlindness {
         matrices.insert(LMSMatrix, atIndex: 0)
         
         var colorMatrix: Matrix!
-        if (mode == CBMode.Daltonize.rawValue) {
+        if mode == CBMode.RedDaltonize.rawValue {
             colorMatrix = colorMatrices[CBMode.Red.rawValue]
+        } else if mode == CBMode.GreenDaltonize.rawValue {
+            colorMatrix = colorMatrices[CBMode.Green.rawValue]
         } else {
             colorMatrix = colorMatrices[mode]
         }
@@ -45,7 +47,7 @@ public class ColorBlindness {
         let simulatedCBMatrix = matrices.reduce(RGBMatrix, combine: {($0 * $1)!})
         matrices.insert(RGBMatrix, atIndex: 0)
         
-        if (mode != CBMode.Daltonize.rawValue) {
+        if (mode < CBMode.RedDaltonize.rawValue) {
             return simulatedCBMatrix
         } else {
             let substractedMatrix = Matrix.identityMatrix(3) - simulatedCBMatrix
