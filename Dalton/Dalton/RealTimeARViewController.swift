@@ -16,7 +16,7 @@ class RealTimeARViewController: ViewController {
 	@IBOutlet var videoPreviewViewLeft: GLKView!
 	@IBOutlet var videoPreviewViewRight: GLKView!
 	
-	let pupilDistance: CGFloat = 200 // in points
+	let pupilDistance: CGFloat = SettingsManager.getPupilDistance() // in points
 	
 	var ciContext: CIContext!
 	var eaglContext: EAGLContext!
