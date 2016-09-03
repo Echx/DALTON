@@ -16,7 +16,7 @@ class RealTimeColorReadingViewController: ViewController {
 
         var currentMode = 1
         
-        @IBOutlet var videoPreviewView: GLKView!
+        @IBOutlet weak var videoPreviewView: GLKView!
         @IBOutlet weak var colorNameLabel: UILabel!
     
     
@@ -106,9 +106,20 @@ class RealTimeColorReadingViewController: ViewController {
             self.captureSession.commitConfiguration()
             
             self.captureSession.startRunning()
-            
-            print("Capture Session Start Running...")
         }
+    
+        deinit {
+            let input = captureSession.inputs[0]
+            captureSession.removeInput(input as! AVCaptureInput)
+            
+            let output = captureSession.outputs[0]
+            captureSession.removeOutput(output as! AVCaptureOutput)
+            captureSessionQueue = nil
+            captureSession.stopRunning()
+            captureSession = nil
+            videoPreviewViewBounds = nil
+        }
+
     }
     
     extension RealTimeColorReadingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -119,8 +130,8 @@ class RealTimeColorReadingViewController: ViewController {
             let sourceExtent = sourceImage.extent
             let sourceAspect = sourceExtent.size.width / sourceExtent.size.height
             
-            glClearColor(0.5, 0.5, 0.5, 1.0);
-            glClear(GLenum(GL_COLOR_BUFFER_BIT));
+            glClearColor(0.5, 0.5, 0.5, 1.0)
+            glClear(GLenum(GL_COLOR_BUFFER_BIT))
             
             // set the blend mode to "source over" so that CI will use that
             glEnable(GLenum(GL_BLEND));
@@ -153,10 +164,11 @@ class RealTimeColorReadingViewController: ViewController {
             }
             
             self.ciContext.drawImage(sourceImage, inRect: videoPreviewViewBounds, fromRect: drawRect)
-            
+            glBindVertexArrayOES(0)
+            glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
+            glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
             self.videoPreviewView.display()
         }
-        
 }
 
 
