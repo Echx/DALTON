@@ -30,6 +30,8 @@
 		625B0D121D7AC83D001ED4B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D101D7AC83D001ED4B7 /* Main.storyboard */; };
 		625B0D141D7AC83D001ED4B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D131D7AC83D001ED4B7 /* Assets.xcassets */; };
 		625B0D171D7AC83D001ED4B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D151D7AC83D001ED4B7 /* LaunchScreen.storyboard */; };
+		98775A8F1D7B4F8B00AC6383 /* RealTimeColorReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98775A8E1D7B4F8B00AC6383 /* RealTimeColorReadingViewController.swift */; };
+		98E62E141D7B674B009800AB /* ColorNamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E62E131D7B674B009800AB /* ColorNamer.swift */; };
 		C8C126FEC2879AFB06F8587A /* Pods_Dalton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412273843AD94B3631CE0AE0 /* Pods_Dalton.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		625B0D161D7AC83D001ED4B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		625B0D181D7AC83D001ED4B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74C232C07D2445783C68DCE4 /* Pods-Dalton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dalton/Pods-Dalton.debug.xcconfig"; sourceTree = "<group>"; };
+		98775A8E1D7B4F8B00AC6383 /* RealTimeColorReadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeColorReadingViewController.swift; sourceTree = "<group>"; };
+		98E62E131D7B674B009800AB /* ColorNamer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorNamer.swift; sourceTree = "<group>"; };
 		B2E7CAF727E5A5555074AA54 /* Pods-Dalton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalton.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dalton/Pods-Dalton.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +200,7 @@
 				625B0D0C1D7AC83D001ED4B7 /* AppDelegate.swift */,
 				625B0D0E1D7AC83D001ED4B7 /* ViewController.swift */,
 				0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */,
+				98775A8E1D7B4F8B00AC6383 /* RealTimeColorReadingViewController.swift */,
 				0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */,
 				0CF403551D7B1C2D00756F46 /* SettingsManager.swift */,
 				625B0D101D7AC83D001ED4B7 /* Main.storyboard */,
@@ -203,6 +208,7 @@
 				625B0D151D7AC83D001ED4B7 /* LaunchScreen.storyboard */,
 				625B0D181D7AC83D001ED4B7 /* Info.plist */,
 				0CF403531D7B19B600756F46 /* Settings.bundle */,
+				98E62E131D7B674B009800AB /* ColorNamer.swift */,
 			);
 			path = Dalton;
 			sourceTree = "<group>";
@@ -434,7 +440,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98775A8F1D7B4F8B00AC6383 /* RealTimeColorReadingViewController.swift in Sources */,
 				0CD76DF61D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift in Sources */,
+				98E62E141D7B674B009800AB /* ColorNamer.swift in Sources */,
 				0CF403561D7B1C2D00756F46 /* SettingsManager.swift in Sources */,
 				625B0D0F1D7AC83D001ED4B7 /* ViewController.swift in Sources */,
 				625B0D0D1D7AC83D001ED4B7 /* AppDelegate.swift in Sources */,
