@@ -126,7 +126,6 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		let filter = CIFilter(name: currentFilter)!
 		filter.setDefaults()
 		filter.setValue(sourceImage, forKey: "inputImage")
-		print("current mode: \(currentMode)")
 		ColorBlindness.applyCBMatrix(filter, mode: currentMode)
 		
 		let filteredImage = filter.outputImage
