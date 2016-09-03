@@ -17,6 +17,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
     var input: PHContentEditingInput?
     var displayedImage: UIImage?
     var imageOrientation: Int32?
+    var currentFilter = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,39 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func viewBlind(sender: AnyObject) {
+        currentFilter = "CIColorMatrix"
+        
+        if displayedImage != nil {
+            imageView.image = performFilter(displayedImage!)
+        }
+    }
+    
+    func performFilter(inputImage: UIImage) -> UIImage? {
+        var cimage: CIImage
+        cimage = CIImage(image: inputImage)!
+        
+        let filter = CIFilter(name: currentFilter)!
+        filter.setDefaults()
+        filter.setValue(cimage, forKey: "inputImage")
+        
+        switch currentFilter {
+            case "CIColorMatrix":
+                filter.setValue(CIVector(x: 0, y: 1, z: 0, w:0), forKey: "inputRVector")
+                
+            default:
+                break
+        }
+        
+        let ciFilteredImage = filter.outputImage!
+        let context = CIContext(options: nil)
+        let cgImage = context.createCGImage(ciFilteredImage,
+                                            fromRect: ciFilteredImage.extent)
+        let resultImage = UIImage(CGImage: cgImage)
+        
+        return resultImage
     }
 
     // MARK: - PHContentEditingController
