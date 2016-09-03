@@ -62,6 +62,22 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
         return resultImage
     }
     
+    // MARK: - Deuteranopia Matrix
+    func getDeuteranopiaMatrix(colorMatrix: Matrix) -> Matrix {
+        var matrices = [Matrix]()
+        let LMSMatrix = Matrix(matrix: [[17.8824, 43.5161, 4.11935],
+                                        [3.45565, 27.1554, 3.86714],
+                                        [0.0299566, 0.184309, 1.46709]])
+        
+        matrices.insert(LMSMatrix, atIndex: 0)
+        matrices.insert(colorMatrix, atIndex: 0)
+        let RGBMatrix = Matrix(matrix: [[0.080944, -0.130504, 0.116721],
+                                        [-0.0102485, 0.0540194, -0.113615],
+                                        [-0.000365294, -0.00412163, 0.693513]])
+        
+        return matrices.reduce(RGBMatrix, combine: *)
+    }
+
     // MARK: - PHContentEditingController
 
     func canHandleAdjustmentData(adjustmentData: PHAdjustmentData?) -> Bool {
