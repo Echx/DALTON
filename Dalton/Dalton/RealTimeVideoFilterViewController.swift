@@ -137,11 +137,21 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		let sourceImage = CIImage(CVPixelBuffer: imageBuffer as CVPixelBufferRef)
 		let sourceExtent = sourceImage.extent
 		
-		let vignetteFilter = CIFilter(name: "CIVignetteEffect")!
-		vignetteFilter.setValue(sourceImage, forKey: kCIInputImageKey)
-		vignetteFilter.setValue(CIVector(x: sourceExtent.size.width/2, y: sourceExtent.size.height/2), forKey: kCIInputCenterKey)
-		vignetteFilter.setValue(NSNumber(double: Double(sourceExtent.size.width/2)), forKey: kCIInputRadiusKey)
-		let filteredImage = vignetteFilter.outputImage
+		let currentFilter = "CIColorMatrix"
+		
+		let filter = CIFilter(name: currentFilter)!
+		filter.setDefaults()
+		filter.setValue(sourceImage, forKey: "inputImage")
+		
+		switch currentFilter {
+		case "CIColorMatrix":
+			filter.setValue(CIVector(x: 0, y: 1, z: 0, w:0), forKey: "inputRVector")
+			
+		default:
+			break
+		}
+		
+		let filteredImage = filter.outputImage
 		
 		let sourceAspect = sourceExtent.size.width / sourceExtent.size.height
 		let previewAspect = videoPreviewViewBounds.size.width  / videoPreviewViewBounds.size.height
