@@ -129,6 +129,17 @@ class RealTimeARViewController: ViewController {
 		
 		print("Capture Session Start Running...")
 	}
+    
+    deinit {
+        let input = captureSession.inputs[0]
+        captureSession.removeInput(input as! AVCaptureInput)
+        
+        let output = captureSession.outputs[0]
+        captureSession.removeOutput(output as! AVCaptureOutput)
+        captureSessionQueue = nil
+        captureSession.stopRunning()
+        captureSession = nil
+    }
 }
 
 extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -177,7 +188,9 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
 		}
-		
+        glBindVertexArrayOES(0)
+        glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
+        glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
 		self.videoPreviewViewLeft.display()
 		
 		//right
@@ -201,7 +214,9 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
 		}
-		
+        glBindVertexArrayOES(0)
+        glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
+        glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
 		self.videoPreviewViewRight.display()
 	}
 }

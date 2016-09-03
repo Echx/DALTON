@@ -58,6 +58,18 @@ class RealTimeVideoFilterViewController: ViewController {
 		super.viewWillAppear(animated)
 		currentMode = NSUserDefaults.standardUserDefaults().integerForKey("MODE")
 	}
+    
+    deinit {
+        let input = captureSession.inputs[0]
+        captureSession.removeInput(input as! AVCaptureInput)
+        
+        let output = captureSession.outputs[0]
+        captureSession.removeOutput(output as! AVCaptureOutput)
+        captureSessionQueue = nil
+        captureSession.stopRunning()
+        captureSession = nil
+        videoPreviewViewBounds = nil
+    }
 	
 	func start() {
 		let videoDevices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
@@ -157,7 +169,9 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBounds, fromRect: drawRect)
 		}
-		
+        glBindVertexArrayOES(0)
+        glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
+        glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
 		self.videoPreviewView.display()
 	}
 }
