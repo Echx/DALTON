@@ -68,3 +68,15 @@ public func - (lhs: Matrix, rhs: Matrix) -> Matrix? {
     
     return Matrix(matrix: result)
 }
+
+public func identityMatrix(size: Int) -> Matrix {
+    var result:[[Double]] = [[Double]](count: size, repeatedValue:[Double](count: size, repeatedValue: 0))
+    for i in 0 ..< result.count {
+        result[i][i] = 1
+    }
+    
+    return Matrix(matrix: result)
+}
+
+
+
