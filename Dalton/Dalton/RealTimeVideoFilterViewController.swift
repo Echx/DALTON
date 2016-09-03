@@ -12,7 +12,7 @@ import CoreImage
 import GLKit
 
 
-class RealTimeVideoFilterViewController: UIViewController {
+class RealTimeVideoFilterViewController: ViewController {
 	
 	@IBOutlet var videoPreviewView: GLKView!
 	
@@ -155,7 +155,6 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		}
 		
 		if filteredImage != nil {
-			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBounds, fromRect: drawRect)
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBounds, fromRect: drawRect)
 		}
 		

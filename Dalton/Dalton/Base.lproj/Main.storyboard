@@ -28,7 +28,7 @@
                                 <rect key="frame" x="294" y="230" width="149" height="30"/>
                                 <state key="normal" title="Real Time Video Filter"/>
                                 <connections>
-                                    <segue destination="M9V-yc-IEe" kind="presentation" id="oTf-GP-eVI"/>
+                                    <segue destination="M9V-yc-IEe" kind="presentation" modalTransitionStyle="crossDissolve" id="oTf-GP-eVI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,14 +116,25 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-8v-kSq" customClass="GLKView">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-Hl-gk8">
+                                <rect key="frame" x="696" y="374" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="✕"/>
+                                <connections>
+                                    <action selector="dismiss" destination="M9V-yc-IEe" eventType="touchUpInside" id="in8-V4-wS7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="fpD-8v-kSq" secondAttribute="bottom" id="7SB-4r-Bb1"/>
                             <constraint firstItem="fpD-8v-kSq" firstAttribute="leading" secondItem="Vx7-rh-SEL" secondAttribute="leading" id="Gso-I5-gUb"/>
                             <constraint firstAttribute="trailing" secondItem="fpD-8v-kSq" secondAttribute="trailing" id="QmN-al-aK2"/>
+                            <constraint firstAttribute="trailing" secondItem="jMu-Hl-gk8" secondAttribute="trailing" constant="10" id="gTi-2h-3Ec"/>
+                            <constraint firstItem="MWO-LI-qLC" firstAttribute="top" secondItem="jMu-Hl-gk8" secondAttribute="bottom" constant="10" id="k6L-T3-E6j"/>
                             <constraint firstItem="fpD-8v-kSq" firstAttribute="top" secondItem="Vx7-rh-SEL" secondAttribute="top" id="kvx-bO-aPs"/>
                         </constraints>
                     </view>

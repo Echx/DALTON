@@ -100,7 +100,7 @@ class RealTimeARViewController: ViewController {
 		let videoDataOutput = AVCaptureVideoDataOutput()
 		videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey : NSNumber(integer:Int(kCVPixelFormatType_32BGRA))]
 		
-		self.captureSessionQueue = dispatch_queue_create("capture_session_queue", nil)
+		self.captureSessionQueue = dispatch_queue_create("capture_ar_session_queue", nil)
 		videoDataOutput.setSampleBufferDelegate(self, queue: self.captureSessionQueue)
 		videoDataOutput.alwaysDiscardsLateVideoFrames = true
 		
@@ -172,14 +172,9 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
-			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
 		}
 		
-		
-		dispatch_sync(dispatch_get_main_queue(), {
-			self.videoPreviewViewLeft.display()
-		})
-		
+		self.videoPreviewViewLeft.display()
 		
 		//right
 		
@@ -201,11 +196,8 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
-			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
 		}
 		
-		dispatch_sync(dispatch_get_main_queue(), {
-			self.videoPreviewViewRight.display()
-		})
+		self.videoPreviewViewRight.display()
 	}
 }
