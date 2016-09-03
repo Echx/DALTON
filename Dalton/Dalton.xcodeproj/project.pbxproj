@@ -26,6 +26,7 @@
 		625B0D121D7AC83D001ED4B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D101D7AC83D001ED4B7 /* Main.storyboard */; };
 		625B0D141D7AC83D001ED4B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D131D7AC83D001ED4B7 /* Assets.xcassets */; };
 		625B0D171D7AC83D001ED4B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B0D151D7AC83D001ED4B7 /* LaunchScreen.storyboard */; };
+		625C126E1D7B265A00782A6C /* ColorBlindness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625C126D1D7B265A00782A6C /* ColorBlindness.swift */; };
 		C8C126FEC2879AFB06F8587A /* Pods_Dalton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412273843AD94B3631CE0AE0 /* Pods_Dalton.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		625B0D131D7AC83D001ED4B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		625B0D161D7AC83D001ED4B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		625B0D181D7AC83D001ED4B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		625C126D1D7B265A00782A6C /* ColorBlindness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBlindness.swift; sourceTree = "<group>"; };
 		74C232C07D2445783C68DCE4 /* Pods-Dalton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dalton/Pods-Dalton.debug.xcconfig"; sourceTree = "<group>"; };
 		B2E7CAF727E5A5555074AA54 /* Pods-Dalton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalton.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dalton/Pods-Dalton.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				6254E86B1D7AD65B00587B36 /* PhotoEditingViewController.swift */,
 				6254E86D1D7AD65B00587B36 /* MainInterface.storyboard */,
 				6254E8701D7AD65B00587B36 /* Info.plist */,
+				625C126D1D7B265A00782A6C /* ColorBlindness.swift */,
 			);
 			path = DaltonColorCorrectExtension;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625C126E1D7B265A00782A6C /* ColorBlindness.swift in Sources */,
 				62524CC01D7B0DE8002AE95D /* Matrix.swift in Sources */,
 				6254E86C1D7AD65B00587B36 /* PhotoEditingViewController.swift in Sources */,
 			);
