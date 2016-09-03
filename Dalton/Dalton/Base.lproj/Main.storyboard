@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -18,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="55O-34-eJk">
-                                <rect key="frame" x="144" y="74" width="449" height="266"/>
+                                <rect key="frame" x="144" y="64" width="449" height="286"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f1X-V6-vcc">
-                                        <rect key="frame" x="0.0" y="0.0" width="449" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="449" height="49"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="9pu-6Y-dHO"/>
+                                            <constraint firstAttribute="height" constant="48" id="9pu-6Y-dHO"/>
                                         </constraints>
                                         <segments>
                                             <segment title="Normal"/>
@@ -33,9 +34,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ugH-VT-WJr">
-                                        <rect key="frame" x="0.0" y="74" width="449" height="45"/>
+                                        <rect key="frame" x="0.0" y="78" width="449" height="49"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="fJW-zh-gPx"/>
+                                            <constraint firstAttribute="height" constant="48" id="fJW-zh-gPx"/>
                                         </constraints>
                                         <segments>
                                             <segment title="Simulation"/>
@@ -44,10 +45,14 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Myj-gi-YcD">
-                                        <rect key="frame" x="0.0" y="148" width="449" height="44"/>
+                                        <rect key="frame" x="0.0" y="156" width="449" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JV-DD-KUz" customClass="BFPaperButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="214.5" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="214.5" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ANp-Ve-u6D"/>
+                                                </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Real Time Video Filter"/>
                                                 <userDefinedRuntimeAttributes>
@@ -63,10 +68,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paD-2H-w75" customClass="BFPaperButton">
-                                                <rect key="frame" x="234" y="0.0" width="214.5" height="44"/>
+                                                <rect key="frame" x="234.5" y="0.0" width="214.5" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="cd6-9Q-jse"/>
+                                                    <constraint firstAttribute="height" constant="50" id="cd6-9Q-jse"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Real Time AR Filter"/>
@@ -87,9 +92,10 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHx-Ki-A3P" customClass="BFPaperButton">
-                                        <rect key="frame" x="0.0" y="222" width="449" height="44"/>
+                                        <rect key="frame" x="0.0" y="236" width="449" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="XdN-uG-a2g"/>
+                                            <constraint firstAttribute="height" constant="50" id="XdN-uG-a2g"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Color Inspector"/>
@@ -153,11 +159,23 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwB-Vn-k0H">
-                                <rect key="frame" x="353" y="364" width="30" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwB-Vn-k0H" customClass="BFPaperButton">
+                                <rect key="frame" x="346" y="350" width="44" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OwB-Vn-k0H" secondAttribute="height" multiplier="1:1" id="W8j-af-MLF"/>
+                                    <constraint firstAttribute="width" constant="44" id="q8o-bl-lww"/>
+                                </constraints>
                                 <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="✕"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="dismiss" destination="qwy-DB-WWJ" eventType="touchUpInside" id="M70-iI-ASv"/>
                                 </connections>
@@ -198,11 +216,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-Hl-gk8">
-                                <rect key="frame" x="696" y="374" width="30" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-Hl-gk8" customClass="BFPaperButton">
+                                <rect key="frame" x="682" y="360" width="44" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jMu-Hl-gk8" secondAttribute="height" multiplier="1:1" id="1kB-sm-8NO"/>
+                                    <constraint firstAttribute="width" constant="44" id="rOv-Vj-ZNx"/>
+                                </constraints>
                                 <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="✕"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="dismiss" destination="M9V-yc-IEe" eventType="touchUpInside" id="in8-V4-wS7"/>
                                 </connections>
@@ -238,43 +268,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ov3-PX-xj7">
-                                <rect key="frame" x="696" y="374" width="30" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="✕"/>
-                                <connections>
-                                    <action selector="dismiss" destination="9a9-jQ-ofT" eventType="touchUpInside" id="O5y-bg-IRt"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkE-2W-tfD">
-                                <rect key="frame" x="248" y="356" width="240" height="38"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vko-Hg-2BM">
-                                        <rect key="frame" x="99" y="9" width="42" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="XR6-gN-0wK"/>
-                                            <constraint firstAttribute="width" constant="42" id="k98-P9-LWO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="XR6-gN-0wK"/>
-                                                <exclude reference="k98-P9-LWO"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="GxU-9z-Yb8"/>
-                                    <constraint firstAttribute="width" constant="240" id="HAu-XS-qTK"/>
-                                    <constraint firstItem="Vko-Hg-2BM" firstAttribute="centerY" secondItem="TkE-2W-tfD" secondAttribute="centerY" id="jjd-7C-8Sc"/>
-                                    <constraint firstItem="Vko-Hg-2BM" firstAttribute="centerX" secondItem="TkE-2W-tfD" secondAttribute="centerX" id="pIy-bG-sYC"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwR-kN-eWR" customClass="GLKView">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <subviews>
@@ -311,12 +304,64 @@
                                     <constraint firstItem="g67-TS-sWT" firstAttribute="centerX" secondItem="zwR-kN-eWR" secondAttribute="centerX" id="Mqa-Jj-QXM"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkE-2W-tfD">
+                                <rect key="frame" x="10" y="360" width="90" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vko-Hg-2BM">
+                                        <rect key="frame" x="24" y="12" width="42" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="XR6-gN-0wK"/>
+                                            <constraint firstAttribute="width" constant="42" id="k98-P9-LWO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="XR6-gN-0wK"/>
+                                                <exclude reference="k98-P9-LWO"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="GxU-9z-Yb8"/>
+                                    <constraint firstAttribute="width" constant="90" id="HAu-XS-qTK"/>
+                                    <constraint firstItem="Vko-Hg-2BM" firstAttribute="centerY" secondItem="TkE-2W-tfD" secondAttribute="centerY" id="jjd-7C-8Sc"/>
+                                    <constraint firstItem="Vko-Hg-2BM" firstAttribute="centerX" secondItem="TkE-2W-tfD" secondAttribute="centerX" id="pIy-bG-sYC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ov3-PX-xj7" customClass="BFPaperButton">
+                                <rect key="frame" x="682" y="360" width="44" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ov3-PX-xj7" secondAttribute="height" multiplier="1:1" id="L1z-dr-zuW"/>
+                                    <constraint firstAttribute="width" constant="44" id="yCx-UE-J4e"/>
+                                </constraints>
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="✕"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="dismiss" destination="9a9-jQ-ofT" eventType="touchUpInside" id="O5y-bg-IRt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zwR-kN-eWR" firstAttribute="leading" secondItem="w6i-gV-Oar" secondAttribute="leading" id="1u1-qV-oXq"/>
-                            <constraint firstItem="TkE-2W-tfD" firstAttribute="centerX" secondItem="zwR-kN-eWR" secondAttribute="centerX" id="5hs-Qq-gmw"/>
-                            <constraint firstItem="oTh-7z-Dek" firstAttribute="top" secondItem="TkE-2W-tfD" secondAttribute="bottom" constant="20" id="7LV-fo-uPn"/>
+                            <constraint firstItem="oTh-7z-Dek" firstAttribute="top" secondItem="TkE-2W-tfD" secondAttribute="bottom" constant="10" id="7LV-fo-uPn"/>
+                            <constraint firstItem="TkE-2W-tfD" firstAttribute="leading" secondItem="w6i-gV-Oar" secondAttribute="leading" constant="10" id="8Pc-fZ-5uE"/>
                             <constraint firstAttribute="trailing" secondItem="zwR-kN-eWR" secondAttribute="trailing" id="XXv-2V-ZsW"/>
                             <constraint firstAttribute="trailing" secondItem="ov3-PX-xj7" secondAttribute="trailing" constant="10" id="dLn-h5-QyM"/>
                             <constraint firstAttribute="bottom" secondItem="zwR-kN-eWR" secondAttribute="bottom" id="fFJ-4s-Q7i"/>

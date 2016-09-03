@@ -22,7 +22,6 @@
 		620A175D1D7B3E0B00FC4511 /* ColorBlindness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A175B1D7B3E0B00FC4511 /* ColorBlindness.swift */; };
 		620A175E1D7B3E0B00FC4511 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A175C1D7B3E0B00FC4511 /* Matrix.swift */; };
 		620A179F1D7B464C00FC4511 /* DaltonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A179D1D7B464C00FC4511 /* DaltonExtension.swift */; };
-		620A17A01D7B464C00FC4511 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 620A179E1D7B464C00FC4511 /* Info.plist */; };
 		620A17A31D7B465100FC4511 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620A17A11D7B465100FC4511 /* MainInterface.storyboard */; };
 		6254E8681D7AD65B00587B36 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6254E8351D7ACCD500587B36 /* PhotosUI.framework */; };
 		6254E8691D7AD65B00587B36 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6254E8371D7ACCD500587B36 /* Photos.framework */; };
@@ -366,7 +365,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				620A17A01D7B464C00FC4511 /* Info.plist in Resources */,
 				620A17A31D7B465100FC4511 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
