@@ -15,7 +15,7 @@ import DaltonFramework
 class RealTimeARViewController: ViewController {
 
 	
-	var currentMode = 1
+	var currentMode = NSUserDefaults.standardUserDefaults().integerForKey("MODE")
 	
 	@IBOutlet var videoPreviewViewLeft: GLKView!
 	@IBOutlet var videoPreviewViewRight: GLKView!
@@ -69,6 +69,11 @@ class RealTimeARViewController: ViewController {
 		}
 		
 		// Do any additional setup after loading the view.
+	}
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		currentMode = NSUserDefaults.standardUserDefaults().integerForKey("MODE")
 	}
 	
 	func start() {

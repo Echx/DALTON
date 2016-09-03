@@ -14,6 +14,7 @@
 		0CD76E011D7AD30A004E37B5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DF71D7AD2EE004E37B5 /* OpenGLES.framework */; };
 		0CF403541D7B19B600756F46 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0CF403531D7B19B600756F46 /* Settings.bundle */; };
 		0CF403561D7B1C2D00756F46 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF403551D7B1C2D00756F46 /* SettingsManager.swift */; };
+		0CF4035C1D7B72F200756F46 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4035B1D7B72F200756F46 /* HomeViewController.swift */; };
 		620A17511D7B3D1800FC4511 /* DaltonFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 620A17501D7B3D1800FC4511 /* DaltonFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		620A17551D7B3D1800FC4511 /* DaltonFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620A174E1D7B3D1800FC4511 /* DaltonFramework.framework */; };
 		620A17561D7B3D1800FC4511 /* DaltonFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 620A174E1D7B3D1800FC4511 /* DaltonFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -83,6 +84,7 @@
 		0CD76DFB1D7AD2FB004E37B5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		0CF403531D7B19B600756F46 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0CF403551D7B1C2D00756F46 /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		0CF4035B1D7B72F200756F46 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		412273843AD94B3631CE0AE0 /* Pods_Dalton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dalton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		620A174E1D7B3D1800FC4511 /* DaltonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DaltonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		620A17501D7B3D1800FC4511 /* DaltonFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaltonFramework.h; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				625B0D0C1D7AC83D001ED4B7 /* AppDelegate.swift */,
 				625B0D0E1D7AC83D001ED4B7 /* ViewController.swift */,
+				0CF4035B1D7B72F200756F46 /* HomeViewController.swift */,
 				0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */,
 				0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */,
 				0CF403551D7B1C2D00756F46 /* SettingsManager.swift */,
@@ -439,6 +442,7 @@
 				625B0D0F1D7AC83D001ED4B7 /* ViewController.swift in Sources */,
 				625B0D0D1D7AC83D001ED4B7 /* AppDelegate.swift in Sources */,
 				0C8DA9541D7B04AF00632DBD /* RealTimeARViewController.swift in Sources */,
+				0CF4035C1D7B72F200756F46 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

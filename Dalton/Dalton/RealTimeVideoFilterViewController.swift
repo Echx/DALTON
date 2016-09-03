@@ -14,7 +14,7 @@ import DaltonFramework
 
 class RealTimeVideoFilterViewController: ViewController {
 	
-	var currentMode = 1
+	var currentMode = NSUserDefaults.standardUserDefaults().integerForKey("MODE")
 	
 	@IBOutlet var videoPreviewView: GLKView!
 	
@@ -52,6 +52,11 @@ class RealTimeVideoFilterViewController: ViewController {
 		}
 		
 		// Do any additional setup after loading the view.
+	}
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		currentMode = NSUserDefaults.standardUserDefaults().integerForKey("MODE")
 	}
 	
 	func start() {
@@ -121,6 +126,7 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		let filter = CIFilter(name: currentFilter)!
 		filter.setDefaults()
 		filter.setValue(sourceImage, forKey: "inputImage")
+		print("current mode: \(currentMode)")
 		ColorBlindness.applyCBMatrix(filter, mode: currentMode)
 		
 		let filteredImage = filter.outputImage
