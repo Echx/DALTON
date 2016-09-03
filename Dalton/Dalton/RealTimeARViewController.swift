@@ -16,6 +16,7 @@ class RealTimeARViewController: ViewController {
 	@IBOutlet var videoPreviewViewLeft: GLKView!
 	@IBOutlet var videoPreviewViewRight: GLKView!
 	
+	let pupilDistance: CGFloat = 200 // in points
 	
 	var ciContext: CIContext!
 	var eaglContext: EAGLContext!
@@ -100,7 +101,7 @@ class RealTimeARViewController: ViewController {
 		let videoDataOutput = AVCaptureVideoDataOutput()
 		videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey : NSNumber(integer:Int(kCVPixelFormatType_32BGRA))]
 		
-		self.captureSessionQueue = dispatch_queue_create("capture_session_queue", nil)
+		self.captureSessionQueue = dispatch_queue_create("capture_ar_session_queue", nil)
 		videoDataOutput.setSampleBufferDelegate(self, queue: self.captureSessionQueue)
 		videoDataOutput.alwaysDiscardsLateVideoFrames = true
 		
@@ -160,7 +161,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		let previewAspectLeft = videoPreviewViewBoundsLeft.size.width  / videoPreviewViewBoundsLeft.size.height
 		var drawRectLeft = sourceExtent
 		if (sourceAspect > previewAspectLeft) {
-			drawRectLeft.origin.x += (drawRectLeft.size.width - drawRectLeft.size.height * previewAspectLeft) / 2.0 - 100;
+			drawRectLeft.origin.x += (drawRectLeft.size.width - drawRectLeft.size.height * previewAspectLeft) / 2.0 - self.pupilDistance / 2;
 			drawRectLeft.size.width = drawRectLeft.size.height * previewAspectLeft
 		}
 		
@@ -172,14 +173,9 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
-			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
 		}
 		
-		
-		dispatch_sync(dispatch_get_main_queue(), {
-			self.videoPreviewViewLeft.display()
-		})
-		
+		self.videoPreviewViewLeft.display()
 		
 		//right
 		
@@ -188,7 +184,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		var drawRectRight = sourceExtent
 		
 		if (sourceAspect > previewAspectRight) {
-			drawRectRight.origin.x += (drawRectRight.size.width - drawRectRight.size.height * previewAspectRight) / 2.0 + 100;
+			drawRectRight.origin.x += (drawRectRight.size.width - drawRectRight.size.height * previewAspectRight) / 2.0 + self.pupilDistance / 2;
 			drawRectRight.size.width = drawRectRight.size.height * previewAspectRight
 		}
 		
@@ -201,11 +197,8 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
-			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
 		}
 		
-		dispatch_sync(dispatch_get_main_queue(), {
-			self.videoPreviewViewRight.display()
-		})
+		self.videoPreviewViewRight.display()
 	}
 }
