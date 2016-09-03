@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="498" width="320" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4w-fH-Jd3">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="BCl-sS-OIa"/>
                                         </constraints>
@@ -32,28 +32,33 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3y-nT-fdn">
-                                        <rect key="frame" x="80" y="0.0" width="80" height="30"/>
+                                        <rect key="frame" x="64" y="0.0" width="64" height="30"/>
                                         <state key="normal" title="Red"/>
                                         <connections>
                                             <action selector="viewRed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="c6R-CZ-Nem"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F44-ki-6Bu">
-                                        <rect key="frame" x="160" y="0.0" width="80" height="30"/>
+                                        <rect key="frame" x="128" y="0.0" width="64" height="30"/>
                                         <state key="normal" title="Green"/>
                                         <connections>
                                             <action selector="viewRed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="YfA-e5-WBh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tT9-eM-Uax">
-                                        <rect key="frame" x="240" y="0.0" width="80" height="30"/>
+                                        <rect key="frame" x="192" y="0.0" width="64" height="30"/>
                                         <state key="normal" title="Blind"/>
                                         <connections>
                                             <action selector="viewRed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ZPl-kn-sZ9"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oU-vb-ep6">
+                                        <rect key="frame" x="256" y="0.0" width="64" height="30"/>
+                                        <state key="normal" title="Daltonize"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="3oU-vb-ep6" firstAttribute="width" secondItem="tT9-eM-Uax" secondAttribute="width" id="Cyh-Pb-Jls"/>
                                     <constraint firstItem="F44-ki-6Bu" firstAttribute="width" secondItem="V3y-nT-fdn" secondAttribute="width" id="Wxt-Zi-vmI"/>
                                     <constraint firstItem="V3y-nT-fdn" firstAttribute="width" secondItem="I4w-fH-Jd3" secondAttribute="width" id="sAi-8L-DVN"/>
                                     <constraint firstItem="tT9-eM-Uax" firstAttribute="width" secondItem="F44-ki-6Bu" secondAttribute="width" id="zqG-pn-YDP"/>
