@@ -84,15 +84,15 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
         let colorMatrix = colorMatrices[currentMode]
         let CBMatrix = getCBMatrix(colorMatrix!)
         let rVector = CIVector(x: CGFloat(CBMatrix.matrix[0][0]),
-                               y: CGFloat(CBMatrix.matrix[1][0]),
-                               z: CGFloat(CBMatrix.matrix[2][0]),
+                               y: CGFloat(CBMatrix.matrix[0][1]),
+                               z: CGFloat(CBMatrix.matrix[0][2]),
                                w: 0)
-        let gVector = CIVector(x: CGFloat(CBMatrix.matrix[0][1]),
+        let gVector = CIVector(x: CGFloat(CBMatrix.matrix[1][0]),
                                y: CGFloat(CBMatrix.matrix[1][1]),
-                               z: CGFloat(CBMatrix.matrix[2][1]),
+                               z: CGFloat(CBMatrix.matrix[1][2]),
                                w: 0)
-        let bVector = CIVector(x: CGFloat(CBMatrix.matrix[0][2]),
-                               y: CGFloat(CBMatrix.matrix[1][2]),
+        let bVector = CIVector(x: CGFloat(CBMatrix.matrix[2][0]),
+                               y: CGFloat(CBMatrix.matrix[2][1]),
                                z: CGFloat(CBMatrix.matrix[2][2]),
                                w: 0)
         filter.setValue(rVector, forKey: "inputRVector")
