@@ -188,9 +188,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
 		}
-        glBindVertexArrayOES(0)
-        glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
-        glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
+		
 		self.videoPreviewViewLeft.display()
 		
 		//right
@@ -214,9 +212,11 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
 		}
-        glBindVertexArrayOES(0)
-        glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
-        glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
+		
 		self.videoPreviewViewRight.display()
+		
+		glBindVertexArrayOES(0)
+		glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
+		glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
 	}
 }

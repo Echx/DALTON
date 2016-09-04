@@ -13,6 +13,9 @@ class HomeViewController: ViewController {
 	
 	@IBOutlet var colorModeSegment: UISegmentedControl!
 	@IBOutlet var simulationModeSegment: UISegmentedControl!
+	
+	private let seguePerformDelay = 0.5
+	private var willPresentController = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,32 @@ class HomeViewController: ViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	@IBAction func presentVideoController() {
+		if !willPresentController {
+			self.performSelector(#selector(presentControllerWithSegueIdentifier), withObject: "VideoSegue", afterDelay: seguePerformDelay)
+			willPresentController = true
+		}
+	}
+	
+	@IBAction func presentVRController() {
+		if !willPresentController {
+			self.performSelector(#selector(presentControllerWithSegueIdentifier), withObject: "VRSegue", afterDelay: seguePerformDelay)
+			willPresentController = true
+		}
+	}
+	
+	@IBAction func presentColorReaderController() {
+		if !willPresentController {
+			self.performSelector(#selector(presentControllerWithSegueIdentifier), withObject: "ColorReaderSegue", afterDelay: seguePerformDelay)
+			willPresentController = true
+		}
+	}
+	
+	func presentControllerWithSegueIdentifier(identifier: String) {
+		self.performSegueWithIdentifier(identifier, sender: self)
+		self.willPresentController = false
+	}
     
 
     // MARK: - Navigation

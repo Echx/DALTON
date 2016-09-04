@@ -172,6 +172,7 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
         glBindVertexArrayOES(0)
         glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
         glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
+		
 		self.videoPreviewView.display()
 	}
 }
