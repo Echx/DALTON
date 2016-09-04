@@ -151,7 +151,7 @@ class RealTimeColorReadingViewController: ViewController {
             let cgOutput = self.ciContext.createCGImage(sourceImage, fromRect: drawRect)
             
             let image = UIImage(CGImage: cgOutput)
-            let color = image.getPixelColor(point)
+            let color = image.averageColorAtPoint(point, radius: 5)
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.colorNameLabel.text = self.colorNamer.rgbToColorName(color).rawValue
@@ -173,8 +173,43 @@ class RealTimeColorReadingViewController: ViewController {
 
 
 extension UIImage {
+	
+	func averageColorAtPoint(center: CGPoint, radius: CGFloat) -> UIColor {
+		var totalR: CGFloat = 0
+		var totalG: CGFloat = 0
+		var totalB: CGFloat = 0
+		
+		let xStart = Int(max(center.x - radius, 0))
+		let xEnd = Int(min(center.x + radius, self.size.width))
+		let yStart = Int(max(center.y - radius, 0))
+		let yEnd = Int(min(center.y + radius, self.size.height))
+		
+		var count: CGFloat = 0
+		
+		for x in xStart..<xEnd {
+			for y in yStart..<yEnd {
+				count += 1
+				var rF: CGFloat = 0,
+				gF: CGFloat = 0,
+				bF: CGFloat = 0,
+				aF: CGFloat = 0
+				self.getPixelColor(CGPoint(x: x, y: y)).getRed(&rF, green: &gF, blue: &bF, alpha: &aF)
+				totalR += rF
+				totalG += gF
+				totalB += bF
+			}
+		}
+		
+		let averageR = totalR / count
+		let averageG = totalG / count
+		let averageB = totalB / count
+		
+		return UIColor(red: averageR, green: averageG, blue: averageB, alpha: 1.0)
+	}
+	
+	
     func getPixelColor(pos: CGPoint) -> UIColor {
-        
+		
         let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage))
         let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
         
