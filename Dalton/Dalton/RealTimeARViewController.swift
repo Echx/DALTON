@@ -71,6 +71,25 @@ class RealTimeARViewController: ViewController {
 		// Do any additional setup after loading the view.
 	}
 	
+	override func viewWillDisappear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		
+	}
+	
+	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+		return .LandscapeLeft
+	}
+	
+	override func shouldAutorotate() -> Bool {
+		return false
+	}
+	
+	override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+		return .LandscapeLeft
+	}
+	
+	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		currentMode = NSUserDefaults.standardUserDefaults().integerForKey("MODE")

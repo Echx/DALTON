@@ -58,6 +58,18 @@ class RealTimeVideoFilterViewController: ViewController {
 		super.viewWillAppear(animated)
 		currentMode = NSUserDefaults.standardUserDefaults().integerForKey("MODE")
 	}
+	
+	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+		return .LandscapeLeft
+	}
+	
+	override func shouldAutorotate() -> Bool {
+		return false
+	}
+	
+	override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+		return .LandscapeLeft
+	}
     
     deinit {
         let input = captureSession.inputs[0]

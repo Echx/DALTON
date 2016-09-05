@@ -131,6 +131,7 @@
                         <segue destination="qwy-DB-WWJ" kind="presentation" identifier="VRSegue" modalTransitionStyle="crossDissolve" id="RQE-fe-GLI"/>
                         <segue destination="M9V-yc-IEe" kind="presentation" identifier="VideoSegue" modalTransitionStyle="crossDissolve" id="hHo-Su-dx2"/>
                         <segue destination="9a9-jQ-ofT" kind="presentation" identifier="ColorReaderSegue" modalTransitionStyle="crossDissolve" id="snc-9i-Et2"/>
+                        <segue destination="Jpf-jP-hDo" kind="presentation" identifier="SettingsSegue" id="u2T-iv-SgH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -201,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tas-2E-8Dt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="-841"/>
+            <point key="canvasLocation" x="284" y="-756"/>
         </scene>
         <!--Real Time Video Filter View Controller-->
         <scene sceneID="T0u-dL-xw4">
@@ -220,7 +221,7 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-Hl-gk8" customClass="BFPaperButton">
-                                <rect key="frame" x="682" y="360" width="44" height="44"/>
+                                <rect key="frame" x="10" y="360" width="44" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jMu-Hl-gk8" secondAttribute="height" multiplier="1:1" id="1kB-sm-8NO"/>
@@ -245,11 +246,17 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="fpD-8v-kSq" secondAttribute="bottom" id="7SB-4r-Bb1"/>
                             <constraint firstItem="fpD-8v-kSq" firstAttribute="leading" secondItem="Vx7-rh-SEL" secondAttribute="leading" id="Gso-I5-gUb"/>
+                            <constraint firstItem="jMu-Hl-gk8" firstAttribute="leading" secondItem="Vx7-rh-SEL" secondAttribute="leading" constant="10" id="JoN-ls-xYZ"/>
                             <constraint firstAttribute="trailing" secondItem="fpD-8v-kSq" secondAttribute="trailing" id="QmN-al-aK2"/>
                             <constraint firstAttribute="trailing" secondItem="jMu-Hl-gk8" secondAttribute="trailing" constant="10" id="gTi-2h-3Ec"/>
                             <constraint firstItem="MWO-LI-qLC" firstAttribute="top" secondItem="jMu-Hl-gk8" secondAttribute="bottom" constant="10" id="k6L-T3-E6j"/>
                             <constraint firstItem="fpD-8v-kSq" firstAttribute="top" secondItem="Vx7-rh-SEL" secondAttribute="top" id="kvx-bO-aPs"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gTi-2h-3Ec"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="videoPreviewView" destination="fpD-8v-kSq" id="YFM-pa-oBE"/>
@@ -258,6 +265,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ox-af-Aet" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="284" y="-230"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="332-ev-mDN">
+            <objects>
+                <viewController id="Jpf-jP-hDo" customClass="SettingsViewController" customModule="Dalton" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uO6-Ot-Vjd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pwf-ak-fTO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7bs-OG-UGr">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="O8t-gr-2BD">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="O8t-gr-2BD" secondAttribute="trailing" id="Gh6-JO-2Va"/>
+                            <constraint firstItem="O8t-gr-2BD" firstAttribute="top" secondItem="7bs-OG-UGr" secondAttribute="top" id="KKl-iU-o29"/>
+                            <constraint firstItem="O8t-gr-2BD" firstAttribute="leading" secondItem="7bs-OG-UGr" secondAttribute="leading" id="or1-Fg-8BL"/>
+                            <constraint firstItem="Pwf-ak-fTO" firstAttribute="top" secondItem="O8t-gr-2BD" secondAttribute="bottom" id="wfl-ai-bne"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RGV-S2-H3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-665" y="370"/>
         </scene>
         <!--Real Time Color Reading View Controller-->
         <scene sceneID="Zgp-4b-nGY">
@@ -314,7 +352,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkE-2W-tfD">
-                                <rect key="frame" x="10" y="360" width="90" height="44"/>
+                                <rect key="frame" x="636" y="360" width="90" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vko-Hg-2BM">
                                         <rect key="frame" x="24" y="12" width="42" height="21"/>
@@ -345,7 +383,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ov3-PX-xj7" customClass="BFPaperButton">
-                                <rect key="frame" x="682" y="360" width="44" height="44"/>
+                                <rect key="frame" x="10" y="360" width="44" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ov3-PX-xj7" secondAttribute="height" multiplier="1:1" id="L1z-dr-zuW"/>
@@ -370,13 +408,19 @@
                         <constraints>
                             <constraint firstItem="zwR-kN-eWR" firstAttribute="leading" secondItem="w6i-gV-Oar" secondAttribute="leading" id="1u1-qV-oXq"/>
                             <constraint firstItem="oTh-7z-Dek" firstAttribute="top" secondItem="TkE-2W-tfD" secondAttribute="bottom" constant="10" id="7LV-fo-uPn"/>
-                            <constraint firstItem="TkE-2W-tfD" firstAttribute="leading" secondItem="w6i-gV-Oar" secondAttribute="leading" constant="10" id="8Pc-fZ-5uE"/>
+                            <constraint firstItem="ov3-PX-xj7" firstAttribute="leading" secondItem="w6i-gV-Oar" secondAttribute="leading" constant="10" id="C45-3t-AIw"/>
                             <constraint firstAttribute="trailing" secondItem="zwR-kN-eWR" secondAttribute="trailing" id="XXv-2V-ZsW"/>
                             <constraint firstAttribute="trailing" secondItem="ov3-PX-xj7" secondAttribute="trailing" constant="10" id="dLn-h5-QyM"/>
                             <constraint firstAttribute="bottom" secondItem="zwR-kN-eWR" secondAttribute="bottom" id="fFJ-4s-Q7i"/>
+                            <constraint firstAttribute="trailing" secondItem="TkE-2W-tfD" secondAttribute="trailing" constant="10" id="o2g-9h-dl7"/>
                             <constraint firstItem="zwR-kN-eWR" firstAttribute="top" secondItem="w6i-gV-Oar" secondAttribute="top" id="oVl-4f-XLZ"/>
                             <constraint firstItem="oTh-7z-Dek" firstAttribute="top" secondItem="ov3-PX-xj7" secondAttribute="bottom" constant="10" id="vsw-aB-Mx5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dLn-h5-QyM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="colorNameLabel" destination="Vko-Hg-2BM" id="DXu-oP-rLS"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7EE2AF1D7DD2BE007342F6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7EE2AE1D7DD2BE007342F6 /* SettingsViewController.swift */; };
 		0C8DA9541D7B04AF00632DBD /* RealTimeARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */; };
 		0CD76DF61D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */; };
 		0CD76DFA1D7AD2F5004E37B5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DF91D7AD2F5004E37B5 /* AVFoundation.framework */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		05A2737515747FEAA4C24D57 /* Pods-Dalton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalton.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dalton/Pods-Dalton.release.xcconfig"; sourceTree = "<group>"; };
+		0C7EE2AE1D7DD2BE007342F6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeARViewController.swift; sourceTree = "<group>"; };
 		0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeVideoFilterViewController.swift; sourceTree = "<group>"; };
 		0CD76DF71D7AD2EE004E37B5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -207,6 +209,7 @@
 				625B0D181D7AC83D001ED4B7 /* Info.plist */,
 				0CF403531D7B19B600756F46 /* Settings.bundle */,
 				98E62E131D7B674B009800AB /* ColorNamer.swift */,
+				0C7EE2AE1D7DD2BE007342F6 /* SettingsViewController.swift */,
 			);
 			path = Dalton;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				625B0D0D1D7AC83D001ED4B7 /* AppDelegate.swift in Sources */,
 				0C8DA9541D7B04AF00632DBD /* RealTimeARViewController.swift in Sources */,
 				0CF4035C1D7B72F200756F46 /* HomeViewController.swift in Sources */,
+				0C7EE2AF1D7DD2BE007342F6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
