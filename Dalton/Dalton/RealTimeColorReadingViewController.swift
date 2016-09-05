@@ -143,9 +143,6 @@ extension RealTimeColorReadingViewController: AVCaptureVideoDataOutputSampleBuff
 		let previewAspect = videoPreviewViewBounds.size.width  / videoPreviewViewBounds.size.height
 		var drawRect = sourceExtent
 		
-		print(NSStringFromCGRect(sourceExtent))
-		print(NSStringFromCGRect(videoPreviewViewBounds))
-		
 		if (sourceAspect > previewAspect) {
 			drawRect.origin.x += (drawRect.size.width - drawRect.size.height * previewAspect) / 2.0;
 			drawRect.size.width = drawRect.size.height * previewAspect

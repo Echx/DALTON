@@ -28,23 +28,35 @@ class HomeViewController: ViewController {
         // Dispose of any resources that can be recreated.
     }
 	
-	@IBAction func presentVideoController() {
-		if !willPresentController {
-			self.performSelector(#selector(presentControllerWithSegueIdentifier), withObject: "VideoSegue", afterDelay: seguePerformDelay)
-			willPresentController = true
-		}
-	}
-	
-	@IBAction func presentVRController() {
-		if !willPresentController {
-			self.performSelector(#selector(presentControllerWithSegueIdentifier), withObject: "VRSegue", afterDelay: seguePerformDelay)
-			willPresentController = true
-		}
-	}
-	
 	@IBAction func presentColorReaderController() {
 		if !willPresentController {
 			self.performSelector(#selector(presentControllerWithSegueIdentifier), withObject: "ColorReaderSegue", afterDelay: seguePerformDelay)
+			willPresentController = true
+		}
+	}
+	
+	@IBAction func presentLiveFilterController() {
+		if !willPresentController {
+			var segueIdentifier = ""
+			
+			let presentationMode = SettingsManager.getPresentationType()
+			if presentationMode == .Video {
+				segueIdentifier = "VideoSegue"
+			} else if presentationMode == .AugmentedReality {
+				segueIdentifier = "ARSegue"
+			} else {
+				print("Invalid presentation type! Abort.")
+				return
+			}
+			
+			self.performSelector(#selector(presentControllerWithSegueIdentifier), withObject: segueIdentifier, afterDelay: seguePerformDelay)
+			willPresentController = true
+		}
+	}
+	
+	@IBAction func presentSettingsViewController() {
+		if !willPresentController {
+			self.performSelector(#selector(presentControllerWithSegueIdentifier), withObject: "SettingsSegue", afterDelay: seguePerformDelay)
 			willPresentController = true
 		}
 	}
@@ -59,22 +71,24 @@ class HomeViewController: ViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		var mode = ColorBlindness.CBMode.None.rawValue
+		let deficiencyType = SettingsManager.getDeficiencyType()
+		let outputType = SettingsManager.getOutputType()
 		
-		if simulationModeSegment.selectedSegmentIndex == 0 {
-			switch colorModeSegment.selectedSegmentIndex {
-			case 1:
+		if outputType == .Simulation {
+			switch deficiencyType {
+			case .Red:
 				mode = ColorBlindness.CBMode.Red.rawValue
-			case 2:
+			case .Green:
 				mode = ColorBlindness.CBMode.Green.rawValue
 			default:
 				mode = ColorBlindness.CBMode.None.rawValue
 			}
 			
 		} else {
-			switch colorModeSegment.selectedSegmentIndex {
-			case 1:
+			switch deficiencyType {
+			case .Red:
 				mode = ColorBlindness.CBMode.RedDaltonize.rawValue
-			case 2:
+			case .Green:
 				mode = ColorBlindness.CBMode.GreenDaltonize.rawValue
 			default:
 				mode = ColorBlindness.CBMode.None.rawValue

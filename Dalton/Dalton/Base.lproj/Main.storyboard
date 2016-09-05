@@ -19,86 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="55O-34-eJk">
-                                <rect key="frame" x="144" y="64" width="449" height="286"/>
+                                <rect key="frame" x="268" y="102" width="200" height="210"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f1X-V6-vcc">
-                                        <rect key="frame" x="0.0" y="0.0" width="449" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="9pu-6Y-dHO"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="Normal"/>
-                                            <segment title="Red Color Blindness"/>
-                                            <segment title="Green Color Blindness"/>
-                                        </segments>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ugH-VT-WJr">
-                                        <rect key="frame" x="0.0" y="78" width="449" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="fJW-zh-gPx"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="Simulation"/>
-                                            <segment title="Correction"/>
-                                        </segments>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Myj-gi-YcD">
-                                        <rect key="frame" x="0.0" y="156" width="449" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JV-DD-KUz" customClass="BFPaperButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="215" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="ANp-Ve-u6D"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Real Time Video Filter"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="presentVideoController" destination="BYZ-38-t0r" eventType="touchUpInside" id="vny-oa-SbW"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paD-2H-w75" customClass="BFPaperButton">
-                                                <rect key="frame" x="235" y="0.0" width="214" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="cd6-9Q-jse"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Real Time AR Filter"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRaised" value="NO"/>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="presentVRController" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tc4-Cl-CqP"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHx-Ki-A3P" customClass="BFPaperButton">
-                                        <rect key="frame" x="0.0" y="236" width="449" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHx-Ki-A3P" customClass="BFPaperButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="XdN-uG-a2g"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Color Inspector"/>
+                                        <state key="normal" title="Start"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="5"/>
@@ -108,30 +38,75 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="presentColorReaderController" destination="BYZ-38-t0r" eventType="touchUpInside" id="SYO-Qo-hsK"/>
+                                            <action selector="presentLiveFilterController" destination="BYZ-38-t0r" eventType="touchUpInside" id="e3T-Sh-rGt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yc-lr-e8J" customClass="BFPaperButton">
+                                        <rect key="frame" x="0.0" y="80" width="200" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="RfP-Xc-Yym"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Color Reader"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="presentColorReaderController" destination="BYZ-38-t0r" eventType="touchUpInside" id="dd6-rL-qJC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rl-9d-tKT" customClass="BFPaperButton">
+                                        <rect key="frame" x="0.0" y="160" width="200" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9bC-cy-gJb"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Settings"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="presentSettingsViewController" destination="BYZ-38-t0r" eventType="touchUpInside" id="0dM-HQ-PUC"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="QD4-DJ-CEE"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.1764705882352941" green="0.29411764705882354" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="55O-34-eJk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="67d-GG-m7e"/>
                             <constraint firstItem="55O-34-eJk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Knv-rA-wie"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="55O-34-eJk" secondAttribute="bottom" constant="20" id="OtJ-Nc-oPg"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="55O-34-eJk" secondAttribute="trailing" constant="20" id="pdv-w1-EQJ"/>
                             <constraint firstItem="55O-34-eJk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yNX-uS-waB"/>
+                            <constraint firstItem="55O-34-eJk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="yw6-L1-SpA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I76-zD-s7M"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="colorModeSegment" destination="f1X-V6-vcc" id="xN7-cB-cdz"/>
-                        <outlet property="simulationModeSegment" destination="ugH-VT-WJr" id="5Ka-t5-FVD"/>
-                        <segue destination="qwy-DB-WWJ" kind="presentation" identifier="VRSegue" modalTransitionStyle="crossDissolve" id="RQE-fe-GLI"/>
+                        <segue destination="qwy-DB-WWJ" kind="presentation" identifier="ARSegue" modalTransitionStyle="crossDissolve" id="RQE-fe-GLI"/>
                         <segue destination="M9V-yc-IEe" kind="presentation" identifier="VideoSegue" modalTransitionStyle="crossDissolve" id="hHo-Su-dx2"/>
                         <segue destination="9a9-jQ-ofT" kind="presentation" identifier="ColorReaderSegue" modalTransitionStyle="crossDissolve" id="snc-9i-Et2"/>
-                        <segue destination="Jpf-jP-hDo" kind="presentation" identifier="SettingsSegue" id="u2T-iv-SgH"/>
+                        <segue destination="lUd-Kn-6zT" kind="presentation" identifier="SettingsSegue" id="coL-Ll-PwY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -266,7 +241,23 @@
             </objects>
             <point key="canvasLocation" x="284" y="-230"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="wEg-Sb-rsr">
+            <objects>
+                <navigationController id="lUd-Kn-6zT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IYM-M9-9Kf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Jpf-jP-hDo" kind="relationship" relationship="rootViewController" id="FT8-iY-eaE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIx-Gf-ws8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-665" y="390"/>
+        </scene>
+        <!--Settings-->
         <scene sceneID="332-ev-mDN">
             <objects>
                 <viewController id="Jpf-jP-hDo" customClass="SettingsViewController" customModule="Dalton" customModuleProvider="target" sceneMemberID="viewController">
@@ -281,7 +272,21 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="O8t-gr-2BD">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="sXV-ic-URH">
+                                        <rect key="frame" x="0.0" y="114" width="736" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sXV-ic-URH" id="CWi-ns-4KQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jpf-jP-hDo" id="Qy0-0z-865"/>
+                                    <outlet property="delegate" destination="Jpf-jP-hDo" id="vEW-3f-MvK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -292,10 +297,21 @@
                             <constraint firstItem="Pwf-ak-fTO" firstAttribute="top" secondItem="O8t-gr-2BD" secondAttribute="bottom" id="wfl-ai-bne"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="jDJ-J4-ti1">
+                        <barButtonItem key="backBarButtonItem" title="Dismiss" id="aK1-LV-YD9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Dismiss" id="yWd-SD-qZn">
+                            <connections>
+                                <action selector="dismiss" destination="Jpf-jP-hDo" id="lP1-qy-Lsz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="O8t-gr-2BD" id="Vp4-Yy-Hgm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGV-S2-H3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-665" y="370"/>
+            <point key="canvasLocation" x="-665" y="1014"/>
         </scene>
         <!--Real Time Color Reading View Controller-->
         <scene sceneID="Zgp-4b-nGY">
