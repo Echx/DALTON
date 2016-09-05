@@ -274,23 +274,31 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwR-kN-eWR" customClass="GLKView">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g67-TS-sWT">
-                                        <rect key="frame" x="328" y="205" width="80" height="4"/>
-                                        <color key="backgroundColor" white="1" alpha="0.29912320143884891" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="nSv-uB-dfI"/>
-                                            <constraint firstAttribute="height" constant="4" id="oHr-hj-5i1"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57C-CS-6S3">
-                                        <rect key="frame" x="366" y="167" width="4" height="80"/>
+                                        <rect key="frame" x="353" y="192" width="30" height="30"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-ed-jAq">
+                                                <rect key="frame" x="14" y="14" width="2" height="2"/>
+                                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="1"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="jwc-ed-jAq" secondAttribute="trailing" constant="14" id="13P-xg-4zm"/>
                                             <constraint firstAttribute="height" constant="5" id="CHG-zr-YNY"/>
                                             <constraint firstAttribute="width" constant="240" id="GWt-LG-R0k"/>
-                                            <constraint firstAttribute="height" constant="80" id="gJy-WU-ttk"/>
-                                            <constraint firstAttribute="width" constant="4" id="pHY-LU-diD"/>
+                                            <constraint firstAttribute="height" constant="30" id="gJy-WU-ttk"/>
+                                            <constraint firstAttribute="width" constant="30" id="pHY-LU-diD"/>
+                                            <constraint firstItem="jwc-ed-jAq" firstAttribute="top" secondItem="57C-CS-6S3" secondAttribute="top" constant="14" id="up7-i2-4IG"/>
+                                            <constraint firstItem="jwc-ed-jAq" firstAttribute="leading" secondItem="57C-CS-6S3" secondAttribute="leading" constant="14" id="wM4-Lw-Mw4"/>
+                                            <constraint firstAttribute="bottom" secondItem="jwc-ed-jAq" secondAttribute="bottom" constant="14" id="y2Q-Fo-Wz4"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                        </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="CHG-zr-YNY"/>
@@ -302,9 +310,7 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="57C-CS-6S3" firstAttribute="centerX" secondItem="zwR-kN-eWR" secondAttribute="centerX" id="6LS-mh-jIg"/>
-                                    <constraint firstItem="g67-TS-sWT" firstAttribute="centerY" secondItem="zwR-kN-eWR" secondAttribute="centerY" id="Fvo-dY-4ba"/>
                                     <constraint firstItem="57C-CS-6S3" firstAttribute="centerY" secondItem="zwR-kN-eWR" secondAttribute="centerY" id="LPE-MQ-riN"/>
-                                    <constraint firstItem="g67-TS-sWT" firstAttribute="centerX" secondItem="zwR-kN-eWR" secondAttribute="centerX" id="Mqa-Jj-QXM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkE-2W-tfD">

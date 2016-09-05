@@ -141,7 +141,7 @@ class RealTimeColorReadingViewController: ViewController {
             let cgOutput = self.ciContext.createCGImage(sourceImage, fromRect: drawRect)
             
             let image = UIImage(CGImage: cgOutput)
-            let color = image.averageColorAtPoint(point, radius: 5)
+            let color = image.averageColorAtPoint(point, radius: 10)
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.colorNameLabel.text = self.colorNamer.rgbToColorName(color).rawValue
