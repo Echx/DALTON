@@ -173,9 +173,7 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBounds, fromRect: drawRect)
 		}
 		
-		dispatch_async(dispatch_get_main_queue()) {
-			self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
-			self.videoPreviewView.display()
-		}
+		self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
+		self.videoPreviewView.display()
 	}
 }
