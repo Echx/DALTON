@@ -20,7 +20,7 @@ class HomeViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setNeedsStatusBarAppearanceUpdate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,4 +98,7 @@ class HomeViewController: ViewController {
 		NSUserDefaults.standardUserDefaults().setInteger(mode, forKey: "MODE")
     }
 
+	override func preferredStatusBarStyle() -> UIStatusBarStyle {
+		return .LightContent
+	}
 }

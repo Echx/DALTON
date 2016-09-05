@@ -290,6 +290,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.1764705882" green="0.29411764709999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="O8t-gr-2BD" secondAttribute="trailing" id="Gh6-JO-2Va"/>
                             <constraint firstItem="O8t-gr-2BD" firstAttribute="top" secondItem="7bs-OG-UGr" secondAttribute="top" id="KKl-iU-o29"/>
@@ -298,8 +299,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="jDJ-J4-ti1">
-                        <barButtonItem key="backBarButtonItem" title="Dismiss" id="aK1-LV-YD9"/>
                         <barButtonItem key="rightBarButtonItem" title="Dismiss" id="yWd-SD-qZn">
+                            <color key="tintColor" red="0.1764705882" green="0.29411764709999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="dismiss" destination="Jpf-jP-hDo" id="lP1-qy-Lsz"/>
                             </connections>
