@@ -161,7 +161,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		
 		let sourceAspect = sourceExtent.size.width / sourceExtent.size.height
 		
-		
+		self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
 		
 		//left
 		
@@ -182,7 +182,6 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
 		}
 		
-		self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
 		self.videoPreviewViewLeft.display()
 		
 		//right
@@ -207,7 +206,6 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
 		}
 		
-//		self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
 		self.videoPreviewViewRight.display()
 	}
 }
