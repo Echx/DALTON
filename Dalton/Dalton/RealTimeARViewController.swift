@@ -162,13 +162,6 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		let sourceAspect = sourceExtent.size.width / sourceExtent.size.height
 		
 		
-		glClearColor(0.5, 0.5, 0.5, 1.0);
-		glClear(GLenum(GL_COLOR_BUFFER_BIT));
-		
-		// set the blend mode to "source over" so that CI will use that
-		glEnable(GLenum(GL_BLEND));
-		glBlendFunc(GLenum(GL_ONE), GLenum(GL_ONE_MINUS_SRC_ALPHA));
-		
 		
 		//left
 		
@@ -189,6 +182,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsLeft, fromRect: drawRectLeft)
 		}
 		
+		self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
 		self.videoPreviewViewLeft.display()
 		
 		//right
@@ -213,10 +207,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBoundsRight, fromRect: drawRectRight)
 		}
 		
+//		self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
 		self.videoPreviewViewRight.display()
-		
-		glBindVertexArrayOES(0)
-		glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
-		glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
 	}
 }

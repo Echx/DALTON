@@ -127,15 +127,7 @@ class RealTimeColorReadingViewController: ViewController {
             let sourceImage = CIImage(CVPixelBuffer: imageBuffer as CVPixelBufferRef)
             let sourceExtent = sourceImage.extent
             let sourceAspect = sourceExtent.size.width / sourceExtent.size.height
-            
-            glClearColor(0.5, 0.5, 0.5, 1.0)
-            glClear(GLenum(GL_COLOR_BUFFER_BIT))
-            
-            // set the blend mode to "source over" so that CI will use that
-            glEnable(GLenum(GL_BLEND));
-            glBlendFunc(GLenum(GL_ONE), GLenum(GL_ONE_MINUS_SRC_ALPHA));
-            
-            
+
             let previewAspect = videoPreviewViewBounds.size.width  / videoPreviewViewBounds.size.height
             var drawRect = sourceExtent
             if (sourceAspect > previewAspect) {
@@ -153,20 +145,15 @@ class RealTimeColorReadingViewController: ViewController {
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.colorNameLabel.text = self.colorNamer.rgbToColorName(color).rawValue
+				if (self.eaglContext != EAGLContext.currentContext()) {
+					EAGLContext.setCurrentContext(self.eaglContext)
+				}
+				
+				self.ciContext.drawImage(sourceImage, inRect: self.videoPreviewViewBounds, fromRect: drawRect)
+				self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
+				self.videoPreviewView.display()
             }
-            
-            self.videoPreviewView.bindDrawable()
-            
-            if (eaglContext != EAGLContext.currentContext()) {
-                EAGLContext.setCurrentContext(eaglContext)
-            }
-            
-            self.ciContext.drawImage(sourceImage, inRect: videoPreviewViewBounds, fromRect: drawRect)
-            glBindVertexArrayOES(0)
-            glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
-            glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
-            self.videoPreviewView.display()
-        }
+		}
 }
 
 

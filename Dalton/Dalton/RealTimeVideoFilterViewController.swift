@@ -144,15 +144,6 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		
 		let sourceAspect = sourceExtent.size.width / sourceExtent.size.height
 		
-		
-		glClearColor(0.5, 0.5, 0.5, 1.0);
-		glClear(GLenum(GL_COLOR_BUFFER_BIT));
-		
-		// set the blend mode to "source over" so that CI will use that
-		glEnable(GLenum(GL_BLEND));
-		glBlendFunc(GLenum(GL_ONE), GLenum(GL_ONE_MINUS_SRC_ALPHA));
-		
-		
 		let previewAspect = videoPreviewViewBounds.size.width  / videoPreviewViewBounds.size.height
 		var drawRect = sourceExtent
 		if (sourceAspect > previewAspect) {
@@ -169,10 +160,10 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		if filteredImage != nil {
 			self.ciContext.drawImage(filteredImage!, inRect: videoPreviewViewBounds, fromRect: drawRect)
 		}
-        glBindVertexArrayOES(0)
-        glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
-        glDisableVertexAttribArray(GLenum(GLKVertexAttrib.Position.rawValue))
 		
-		self.videoPreviewView.display()
+		dispatch_async(dispatch_get_main_queue()) {
+			self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
+			self.videoPreviewView.display()
+		}
 	}
 }
