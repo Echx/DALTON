@@ -13,8 +13,6 @@ import GLKit
 import DaltonFramework
 
 class RealTimeColorReadingViewController: ViewController {
-
-        var currentMode = 1
         
         @IBOutlet weak var videoPreviewView: GLKView!
         @IBOutlet weak var colorNameLabel: UILabel!
