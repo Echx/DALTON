@@ -20,7 +20,6 @@ class RealTimeColorReadingViewController: ViewController {
 
 	var ciContext: CIContext!
 	var eaglContext: EAGLContext!
-	var videoPreviewViewBounds: CGRect!
 
 	var videoDevice: AVCaptureDevice!
 	var captureSession: AVCaptureSession!
@@ -39,7 +38,6 @@ class RealTimeColorReadingViewController: ViewController {
 		
 		self.videoPreviewView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
 		self.videoPreviewView.bindDrawable()
-		self.videoPreviewViewBounds = CGRectMake(0, 0, CGFloat(self.videoPreviewView.drawableWidth), CGFloat(self.videoPreviewView.drawableHeight))
 		
 		self.ciContext = CIContext(EAGLContext: self.eaglContext, options: [kCIContextWorkingColorSpace: NSNull()])
 		
@@ -127,7 +125,6 @@ class RealTimeColorReadingViewController: ViewController {
 		captureSessionQueue = nil
 		captureSession.stopRunning()
 		captureSession = nil
-		videoPreviewViewBounds = nil
 	}
 
 }
@@ -140,6 +137,7 @@ extension RealTimeColorReadingViewController: AVCaptureVideoDataOutputSampleBuff
 		let sourceExtent = sourceImage.extent
 		let sourceAspect = sourceExtent.size.width / sourceExtent.size.height
 
+		let videoPreviewViewBounds = CGRectMake(0, 0, CGFloat(self.videoPreviewView.drawableWidth), CGFloat(self.videoPreviewView.drawableHeight))
 		let previewAspect = videoPreviewViewBounds.size.width  / videoPreviewViewBounds.size.height
 		var drawRect = sourceExtent
 		
@@ -158,14 +156,15 @@ extension RealTimeColorReadingViewController: AVCaptureVideoDataOutputSampleBuff
 		
 		dispatch_async(dispatch_get_main_queue()) {
 			self.colorNameLabel.text = self.colorNamer.rgbToColorName(color).rawValue
-			if (self.eaglContext != EAGLContext.currentContext()) {
-				EAGLContext.setCurrentContext(self.eaglContext)
-			}
-			
-			self.ciContext.drawImage(sourceImage, inRect: self.videoPreviewViewBounds, fromRect: drawRect)
-			self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
-			self.videoPreviewView.display()
 		}
+		
+		if (self.eaglContext != EAGLContext.currentContext()) {
+			EAGLContext.setCurrentContext(self.eaglContext)
+		}
+		
+		self.ciContext.drawImage(sourceImage, inRect: videoPreviewViewBounds, fromRect: drawRect)
+		self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
+		self.videoPreviewView.display()
 	}
 }
 

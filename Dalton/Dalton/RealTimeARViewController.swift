@@ -24,8 +24,6 @@ class RealTimeARViewController: ViewController {
 	
 	var ciContext: CIContext!
 	var eaglContext: EAGLContext!
-	var videoPreviewViewBoundsLeft: CGRect!
-	var videoPreviewViewBoundsRight: CGRect!
 	
 	var videoDevice: AVCaptureDevice!
 	var captureSession: AVCaptureSession!
@@ -45,20 +43,12 @@ class RealTimeARViewController: ViewController {
 		
 		self.videoPreviewViewLeft.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
 		self.videoPreviewViewLeft.bindDrawable()
-		self.videoPreviewViewBoundsLeft = CGRectMake(0, 0, CGFloat(self.videoPreviewViewLeft.drawableWidth), CGFloat(self.videoPreviewViewLeft.drawableHeight))
 		
 		self.videoPreviewViewRight.context = self.eaglContext
 		self.videoPreviewViewRight?.enableSetNeedsDisplay = false
 		
 		self.videoPreviewViewRight.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
 		self.videoPreviewViewRight.bindDrawable()
-		
-		self.videoPreviewViewBoundsRight = CGRectMake(0, 0, CGFloat(self.videoPreviewViewRight.drawableWidth), CGFloat(self.videoPreviewViewRight.drawableHeight))
-		
-		
-		
-		
-		
 		
 		self.ciContext = CIContext(EAGLContext: self.eaglContext, options: [kCIContextWorkingColorSpace: NSNull()])
 		
@@ -183,7 +173,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		self.eaglContext.presentRenderbuffer(Int(GL_RENDERBUFFER))
 		
 		//left
-		
+		let videoPreviewViewBoundsLeft = CGRectMake(0, 0, CGFloat(self.videoPreviewViewLeft.drawableWidth), CGFloat(self.videoPreviewViewLeft.drawableHeight))
 		let previewAspectLeft = videoPreviewViewBoundsLeft.size.width  / videoPreviewViewBoundsLeft.size.height
 		var drawRectLeft = sourceExtent
 		if (sourceAspect > previewAspectLeft) {
@@ -204,7 +194,7 @@ extension RealTimeARViewController: AVCaptureVideoDataOutputSampleBufferDelegate
 		self.videoPreviewViewLeft.display()
 		
 		//right
-		
+		let videoPreviewViewBoundsRight = CGRectMake(0, 0, CGFloat(self.videoPreviewViewRight.drawableWidth), CGFloat(self.videoPreviewViewRight.drawableHeight))
 		let previewAspectRight = videoPreviewViewBoundsRight.size.width  / videoPreviewViewBoundsRight.size.height
 		
 		var drawRectRight = sourceExtent

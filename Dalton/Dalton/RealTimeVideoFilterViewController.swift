@@ -21,7 +21,6 @@ class RealTimeVideoFilterViewController: ViewController {
 	
 	var ciContext: CIContext!
 	var eaglContext: EAGLContext!
-	var videoPreviewViewBounds: CGRect!
 	
 	var videoDevice: AVCaptureDevice!
 	var captureSession: AVCaptureSession!
@@ -41,7 +40,6 @@ class RealTimeVideoFilterViewController: ViewController {
 		
 		self.videoPreviewView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
 		self.videoPreviewView.bindDrawable()
-		self.videoPreviewViewBounds = CGRectMake(0, 0, CGFloat(self.videoPreviewView.drawableWidth), CGFloat(self.videoPreviewView.drawableHeight))
 		
 		self.ciContext = CIContext(EAGLContext: self.eaglContext, options: [kCIContextWorkingColorSpace: NSNull()])
 		
@@ -80,7 +78,6 @@ class RealTimeVideoFilterViewController: ViewController {
         captureSessionQueue = nil
         captureSession.stopRunning()
         captureSession = nil
-        videoPreviewViewBounds = nil
     }
 	
 	func start() {
@@ -156,10 +153,11 @@ extension RealTimeVideoFilterViewController: AVCaptureVideoDataOutputSampleBuffe
 		
 		let sourceAspect = sourceExtent.size.width / sourceExtent.size.height
 		
+		let videoPreviewViewBounds = CGRectMake(0, 0, CGFloat(self.videoPreviewView.drawableWidth), CGFloat(self.videoPreviewView.drawableHeight))
 		let previewAspect = videoPreviewViewBounds.size.width  / videoPreviewViewBounds.size.height
 		var drawRect = sourceExtent
 		if (sourceAspect > previewAspect) {
-			drawRect.origin.x += (drawRect.size.width - drawRect.size.height * previewAspect) / 2.0 - 100;
+			drawRect.origin.x += (drawRect.size.width - drawRect.size.height * previewAspect) / 2.0
 			drawRect.size.width = drawRect.size.height * previewAspect
 		}
 		
