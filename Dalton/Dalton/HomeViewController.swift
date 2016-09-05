@@ -14,7 +14,7 @@ class HomeViewController: ViewController {
 	@IBOutlet var colorModeSegment: UISegmentedControl!
 	@IBOutlet var simulationModeSegment: UISegmentedControl!
 	
-	private let seguePerformDelay = 0.5
+	private let seguePerformDelay = 0.2
 	private var willPresentController = false
 
     override func viewDidLoad() {

@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0C7EE2AF1D7DD2BE007342F6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7EE2AE1D7DD2BE007342F6 /* SettingsViewController.swift */; };
+		0C7EE2B21D7DF09B007342F6 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7EE2B01D7DF09B007342F6 /* SliderTableViewCell.swift */; };
+		0C7EE2B31D7DF09B007342F6 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C7EE2B11D7DF09B007342F6 /* SliderTableViewCell.xib */; };
+		0C7EE2B61D7DF208007342F6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7EE2B51D7DF208007342F6 /* TableViewCell.swift */; };
 		0C8DA9541D7B04AF00632DBD /* RealTimeARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */; };
 		0CD76DF61D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */; };
 		0CD76DFA1D7AD2F5004E37B5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DF91D7AD2F5004E37B5 /* AVFoundation.framework */; };
 		0CD76DFC1D7AD2FB004E37B5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DFB1D7AD2FB004E37B5 /* CoreImage.framework */; };
 		0CD76E011D7AD30A004E37B5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD76DF71D7AD2EE004E37B5 /* OpenGLES.framework */; };
-		0CF403541D7B19B600756F46 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0CF403531D7B19B600756F46 /* Settings.bundle */; };
 		0CF403561D7B1C2D00756F46 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF403551D7B1C2D00756F46 /* SettingsManager.swift */; };
 		0CF4035C1D7B72F200756F46 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4035B1D7B72F200756F46 /* HomeViewController.swift */; };
 		61E7A4C931360BA57BF2DDA2 /* Pods_DaltonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DB1657901DC2A838CA8C02 /* Pods_DaltonExtension.framework */; };
@@ -82,12 +84,14 @@
 /* Begin PBXFileReference section */
 		05A2737515747FEAA4C24D57 /* Pods-Dalton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalton.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dalton/Pods-Dalton.release.xcconfig"; sourceTree = "<group>"; };
 		0C7EE2AE1D7DD2BE007342F6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0C7EE2B01D7DF09B007342F6 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SliderTableViewCell.swift; path = Cells/SliderTableViewCell.swift; sourceTree = "<group>"; };
+		0C7EE2B11D7DF09B007342F6 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SliderTableViewCell.xib; path = Cells/SliderTableViewCell.xib; sourceTree = "<group>"; };
+		0C7EE2B51D7DF208007342F6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = Cells/TableViewCell.swift; sourceTree = "<group>"; };
 		0C8DA9531D7B04AF00632DBD /* RealTimeARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeARViewController.swift; sourceTree = "<group>"; };
 		0CD76DF51D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeVideoFilterViewController.swift; sourceTree = "<group>"; };
 		0CD76DF71D7AD2EE004E37B5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		0CD76DF91D7AD2F5004E37B5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0CD76DFB1D7AD2FB004E37B5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		0CF403531D7B19B600756F46 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0CF403551D7B1C2D00756F46 /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		0CF4035B1D7B72F200756F46 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		51DB1657901DC2A838CA8C02 /* Pods_DaltonExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaltonExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +154,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C7EE2B41D7DF0A2007342F6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0C7EE2B01D7DF09B007342F6 /* SliderTableViewCell.swift */,
+				0C7EE2B11D7DF09B007342F6 /* SliderTableViewCell.xib */,
+				0C7EE2B51D7DF208007342F6 /* TableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		620A174F1D7B3D1800FC4511 /* DaltonFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,8 +222,8 @@
 				625B0D131D7AC83D001ED4B7 /* Assets.xcassets */,
 				625B0D151D7AC83D001ED4B7 /* LaunchScreen.storyboard */,
 				625B0D181D7AC83D001ED4B7 /* Info.plist */,
-				0CF403531D7B19B600756F46 /* Settings.bundle */,
 				98E62E131D7B674B009800AB /* ColorNamer.swift */,
+				0C7EE2B41D7DF0A2007342F6 /* Cells */,
 			);
 			path = Dalton;
 			sourceTree = "<group>";
@@ -376,7 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CF403541D7B19B600756F46 /* Settings.bundle in Resources */,
+				0C7EE2B31D7DF09B007342F6 /* SliderTableViewCell.xib in Resources */,
 				625B0D171D7AC83D001ED4B7 /* LaunchScreen.storyboard in Resources */,
 				625B0D141D7AC83D001ED4B7 /* Assets.xcassets in Resources */,
 				625B0D121D7AC83D001ED4B7 /* Main.storyboard in Resources */,
@@ -504,7 +518,9 @@
 				0CD76DF61D7AD291004E37B5 /* RealTimeVideoFilterViewController.swift in Sources */,
 				98E62E141D7B674B009800AB /* ColorNamer.swift in Sources */,
 				0CF403561D7B1C2D00756F46 /* SettingsManager.swift in Sources */,
+				0C7EE2B21D7DF09B007342F6 /* SliderTableViewCell.swift in Sources */,
 				625B0D0F1D7AC83D001ED4B7 /* ViewController.swift in Sources */,
+				0C7EE2B61D7DF208007342F6 /* TableViewCell.swift in Sources */,
 				625B0D0D1D7AC83D001ED4B7 /* AppDelegate.swift in Sources */,
 				0C8DA9541D7B04AF00632DBD /* RealTimeARViewController.swift in Sources */,
 				0CF4035C1D7B72F200756F46 /* HomeViewController.swift in Sources */,

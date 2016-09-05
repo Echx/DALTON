@@ -49,26 +49,12 @@ class SettingsViewController: ViewController {
         super.viewDidLoad()
 		
 		self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
-        // Do any additional setup after loading the view.
+		self.tableView.estimatedRowHeight = 113
+		self.tableView.rowHeight = UITableViewAutomaticDimension
+		
+		SliderTableViewCell.registerCellForTableView(self.tableView, reuseIdentifier: SliderTableViewCell.identifier())
+		
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension SettingsViewController: UITableViewDelegate {
@@ -145,7 +131,7 @@ extension SettingsViewController: UITableViewDataSource {
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let tableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+		var tableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 		
 		let section = indexPath.section
 		let row = indexPath.row
@@ -200,8 +186,10 @@ extension SettingsViewController: UITableViewDataSource {
 				}
 			
 			case SectionIndex.ARSettings:
-				tableViewCell.textLabel?.text = "Some Slider Here"
+				let sliderCell = tableView.dequeueReusableCellWithIdentifier(SliderTableViewCell.identifier())! as! SliderTableViewCell
+				sliderCell.setSliderValue(SettingsManager.getPupilDistance())
 				selectable = false
+				tableViewCell = sliderCell
 			
 			default:
 				print("Invalid Section")
