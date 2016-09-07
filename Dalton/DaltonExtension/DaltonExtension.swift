@@ -31,7 +31,19 @@ class DaltonExtensionViewController: UIViewController, PHContentEditingControlle
     }
     
     @IBAction func switchMode(sender: UISegmentedControl) {
-        currentMode = sender.selectedSegmentIndex > ColorBlindness.CBMode.Blind.rawValue ? sender.selectedSegmentIndex + ColorBlindness.CBMode.RedDaltonize.rawValue - ColorBlindness.CBMode.Blind.rawValue - 1 : sender.selectedSegmentIndex
+		switch sender.selectedSegmentIndex {
+		case 1:
+			currentMode = ColorBlindness.CBMode.Red.rawValue
+		case 2:
+			currentMode = ColorBlindness.CBMode.Green.rawValue
+		case 3:
+			currentMode = ColorBlindness.CBMode.RedDaltonize.rawValue
+		case 4:
+			currentMode = ColorBlindness.CBMode.GreenDaltonize.rawValue
+		default:
+			currentMode = ColorBlindness.CBMode.None.rawValue
+		}
+		
         if displayedImage != nil {
             imageView.image = performFilter(displayedImage!)
         }
@@ -74,7 +86,7 @@ class DaltonExtensionViewController: UIViewController, PHContentEditingControlle
         if input != nil {
             displayedImage = input!.displaySizeImage
             imageOrientation = input!.fullSizeImageOrientation
-            imageView.image = displayedImage
+			imageView.image = performFilter(displayedImage!)
         }
     }
     
