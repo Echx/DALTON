@@ -18,7 +18,7 @@ class SettingsManager: NSObject {
 		}
 		
 		if userDefaults.objectForKey("deficiency_type") == nil {
-			userDefaults.setInteger(DeficiencyType.None.rawValue, forKey: "deficiency_type")
+			userDefaults.setInteger(DeficiencyType.Red.rawValue, forKey: "deficiency_type")
 		}
 		
 		if userDefaults.objectForKey("output_type") == nil {
