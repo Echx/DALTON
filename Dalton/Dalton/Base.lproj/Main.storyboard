@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="XVP-bm-B4g">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="55O-34-eJk">
                                 <rect key="frame" x="268" y="102" width="200" height="210"/>
                                 <subviews>
@@ -88,12 +91,18 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1764705882352941" green="0.29411764705882354" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.34901960780000002" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="55O-34-eJk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="67d-GG-m7e"/>
+                            <constraint firstAttribute="trailing" secondItem="XVP-bm-B4g" secondAttribute="trailing" id="6PU-zn-zRs"/>
+                            <constraint firstItem="XVP-bm-B4g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DPu-oc-FNe"/>
                             <constraint firstItem="55O-34-eJk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Knv-rA-wie"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="55O-34-eJk" secondAttribute="bottom" constant="20" id="OtJ-Nc-oPg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XVP-bm-B4g" secondAttribute="bottom" id="TTz-Q5-9Rv"/>
+                            <constraint firstItem="XVP-bm-B4g" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YRQ-eD-fgL"/>
+                            <constraint firstItem="XVP-bm-B4g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="duW-Tg-2tP"/>
+                            <constraint firstItem="XVP-bm-B4g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ocp-cG-5JR"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="55O-34-eJk" secondAttribute="trailing" constant="20" id="pdv-w1-EQJ"/>
                             <constraint firstItem="55O-34-eJk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yNX-uS-waB"/>
                             <constraint firstItem="55O-34-eJk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="yw6-L1-SpA"/>
@@ -111,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-665" y="-230"/>
+            <point key="canvasLocation" x="-665" y="-320"/>
         </scene>
         <!--Real TimeAR View Controller-->
         <scene sceneID="nPF-rZ-0et">
@@ -449,4 +458,7 @@
             <point key="canvasLocation" x="284" y="370"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mask" width="1024" height="1024"/>
+    </resources>
 </document>

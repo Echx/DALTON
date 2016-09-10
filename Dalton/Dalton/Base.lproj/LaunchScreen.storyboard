@@ -16,7 +16,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.1764705882" green="0.29411764709999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.15000000596046448" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-er-vSJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.34901960784313724" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="s1d-er-vSJ" secondAttribute="trailing" id="7ts-Wn-U8k"/>
+                            <constraint firstItem="s1d-er-vSJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Epw-lX-bPv"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="s1d-er-vSJ" secondAttribute="bottom" id="gCn-OU-RRx"/>
+                            <constraint firstItem="s1d-er-vSJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="hSF-WQ-xKL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +35,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mask" width="1024" height="1024"/>
+    </resources>
 </document>
