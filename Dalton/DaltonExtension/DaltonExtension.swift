@@ -102,6 +102,25 @@ class DaltonExtensionViewController: UIViewController, PHContentEditingControlle
             // output.adjustmentData = <#new adjustment data#>
             // let renderedJPEGData = <#output JPEG#>
             // renderedJPEGData.writeToURL(output.renderedContentURL, atomically: true)
+            let url = self.input?.fullSizeImageURL
+            
+            if let imageUrl = url {
+                let fullImage = UIImage(contentsOfFile: imageUrl.path!)
+                
+                let resultImage = self.performFilter(fullImage!)
+                
+                let renderedJPEGData = UIImageJPEGRepresentation(resultImage!, 0.9)
+                
+                renderedJPEGData!.writeToURL(output.renderedContentURL, atomically: true)
+                
+                let archivedData = NSKeyedArchiver.archivedDataWithRootObject(self.currentMode)
+                
+                let adjustmentData = PHAdjustmentData(formatIdentifier: "com.echx.Dalton",
+                                                      formatVersion: "1.0",
+                                                      data: archivedData)
+                
+                output.adjustmentData = adjustmentData
+            }
             
             // Call completion handler to commit edit to Photos.
             completionHandler?(output)
