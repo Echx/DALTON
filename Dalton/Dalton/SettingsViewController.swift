@@ -216,7 +216,24 @@ extension SettingsViewController: UITableViewDataSource {
 			return "Augmented Reality Settings"
 			
 		default:
-			return ""
+			return nil
+		}
+	}
+	
+	func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+		switch section {
+			
+		case SectionIndex.OutputMode:
+			return "Simulation helps normal people experience the world of our color blind friends. Correction helps color blind fellows to differenciate colors better.\n"
+			
+		case SectionIndex.PresentationMode:
+			return "This controls how the screen looks like when entering Live Filter session. For Augmented Reality mode, typically you will need a VR container such as Google Cardboard.\n"
+			
+		case SectionIndex.ARSettings:
+			return "Screen Offset determines the content displacement of the two screens in VR mode, only effective when Augmented Reality is selected in Presentation Mode"
+			
+		default:
+			return nil
 		}
 	}
 }
